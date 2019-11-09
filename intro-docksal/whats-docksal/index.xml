@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>What&#39;s a Docksal on Docksal Documentation</title>
-    <link>/intro-docksal/whats-docksal/</link>
+    <link>https://jddoesdev.github.io/docksal-book/intro-docksal/whats-docksal/</link>
     <description>Recent content in What&#39;s a Docksal on Docksal Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/intro-docksal/whats-docksal/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jddoesdev.github.io/docksal-book/intro-docksal/whats-docksal/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

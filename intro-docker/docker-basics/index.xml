@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker Basics on Docksal Documentation</title>
-    <link>/intro-docker/docker-basics/</link>
+    <link>https://jddoesdev.github.io/docksal-book/intro-docker/docker-basics/</link>
     <description>Recent content in Docker Basics on Docksal Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/intro-docker/docker-basics/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jddoesdev.github.io/docksal-book/intro-docker/docker-basics/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

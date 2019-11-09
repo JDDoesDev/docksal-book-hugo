@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.59.0" />
+    <meta name="description" content="Official Docksal documentation website">
+
+
+    
+<link rel="shortcut icon" href="/images/favicon.png?1573323502" type="image/x-icon" />
+
+    <title>Bind Mounts :: Docksal Documentation</title>
+
+    
+    <link href="/css/nucleus.css?1573323502" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1573323502" rel="stylesheet">
+    <link href="/css/hybrid.css?1573323502" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1573323502" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1573323502" rel="stylesheet">
+    <link href="/css/auto-complete.css?1573323502" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1573323502" rel="stylesheet">
+    <link href="/css/theme.css?1573323502" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1573323502" rel="stylesheet">
+    
+      <link href="/css/theme-docksal.css?1573323502" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1573323502"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+        
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','');</script>
+    
+    
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
+  </head>
+  <body class="" data-url="/intro-docker/docker-basics/docker-components/storage/bind-mounts/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+    <img src="/images/docksal-horiz-white.svg" alt="Docksal logo">
+</a>
+
+    </div>
+    
+        <div class="searchboxed">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-close"></i></span>
+</div>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction/" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/introduction/">
+          <b>1. </b>Introduction
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction/about/" title="About This Training" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/introduction/about/">
+          About This Training
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction/prerequisites/" title="Prerequisites" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/introduction/prerequisites/">
+          Prerequisites
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/" title="Intro to Docker" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/intro-docker/">
+          <b>2. </b>Intro to Docker
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/" title="Docker Basics" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/">
+          Docker Basics
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/overview/" title="What is Docker?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/overview/">
+          What is Docker?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/" title="How Docker Works" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/">
+          How Docker Works
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/client/" title="Docker Client" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/client/">
+          Docker Client
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/daemon/" title="Docker Daemon" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/daemon/">
+          Docker Daemon
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/images/" title="Docker Images" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/images/">
+          Docker Images
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/containers/" title="Docker Containers" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/containers/">
+          Docker Containers
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/storage/" title="Docker Storage" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/storage/">
+          Docker Storage
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/storage/volumes/" title="Volumes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/storage/volumes/">
+          Volumes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/storage/bind-mounts/" title="Bind Mounts" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/storage/bind-mounts/">
+          Bind Mounts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/services/" title="Docker Services" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/services/">
+          Docker Services
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/registries/" title="Docker Registries" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/registries/">
+          Docker Registries
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/why-containerize/" title="Why Containerize?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/why-containerize/">
+          Why Containerize?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/beyond-docker/" title="Beyond Docker" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/beyond-docker/">
+          Beyond Docker
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docksal/" title="Intro to Docksal" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docksal/">
+          <b>3. </b>Intro to Docksal
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docksal/whats-docksal/" title="What&#39;s a Docksal" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docksal/whats-docksal/">
+          What&#39;s a Docksal
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docksal/stacks/" title="Docksal Stacks" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docksal/stacks/">
+          Docksal Stacks
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docksal/services/" title="Docksal Services" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docksal/services/">
+          Docksal Services
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docksal/starter-kits/" title="Boilerplates and Starter-kits" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docksal/starter-kits/">
+          Boilerplates and Starter-kits
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docksal/in-the-container/" title="What&#39;s in the Container?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docksal/in-the-container/">
+          What&#39;s in the Container?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting-started/">
+          <b>4. </b>Getting Started
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/installing-docksal/prereqs/" title="Before Installing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting-started/installing-docksal/prereqs/">
+          Before Installing
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/installing-docksal/installation/" title="Installation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting-started/installing-docksal/installation/">
+          Installation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/first-fin/" title="Starting the System" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting-started/first-fin/">
+          Starting the System
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/new-project/" title="Beginning with a Boilerplate" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting-started/new-project/">
+          Beginning with a Boilerplate
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/installing-drupal/" title="Installing a Drupal Site" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting-started/installing-drupal/">
+          Installing a Drupal Site
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/customizing/" title="Customizing a Project" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting-started/customizing/">
+          Customizing a Project
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/advanced-customizing/" title="Advanced Customizations" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting-started/advanced-customizing/">
+          Advanced Customizations
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/docksal/docksal"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="/versions/"><i class='fas fa-list'></i> Versions</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <div style="text-align:center">
+    
+    <a class="github-button" href="https://github.com/docksal/docksal" data-icon="octicon-star" data-show-count="true" aria-label="Star docksal/docksal on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/docksal/docksal/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork docksal/docksal on GitHub">Fork</a>
+
+    <p>Made with <i class="fas fa-heart"></i> from <a href="https://docksal.io"><i class="icon docksal"></i></a></p>
+</div>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript">
+ docsearch({
+ apiKey: '656714d8c3d5f7138b76633780faf6ba',
+ indexName: 'docksal',
+ inputSelector: '#search-by',
+ debug: false 
+ });
+     jQuery(document).ready(function() {
+     
+
+     jQuery('input').keydown(function (e) {
+         
+         if (e.which == '37' || e.which == '39') {
+             e.stopPropagation();
+         }
+     });
+ });
+</script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/docksal/docksal/edit/develop/docs/intro-docker/docker-basics/docker-components/storage/bind-mounts/_index.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Modern Local Development With Docksal</a> > <a href='/intro-docker/'>Intro to Docker</a> > <a href='/intro-docker/docker-basics/'>Docker Basics</a> > <a href='/intro-docker/docker-basics/docker-components/'>How Docker Works</a> > <a href='/intro-docker/docker-basics/docker-components/storage/'>Docker Storage</a> > Bind Mounts
+          
+         
+          
+         
+          
+         
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#bind-mounts">Bind Mounts</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Bind Mounts
+            </h1>
+          
+
+        
+
+
+
+
+	
+
+<h2 id="bind-mounts">Bind Mounts</h2>
+
+<p>A bind mount is very similar to a volume, in fact it uses a lot of the same concepts. However, instead of creating a volume with nothing in it, a bind mount <em>binds</em> to a folder on your host machine and <em>mounts</em> it within your container. As we&rsquo;ll find out later, Docksal relies heavily on this concept for local development, but we&rsquo;ll get into that in a bit.</p>
+
+<p>When we set up a bind mount we are doing two things. We&rsquo;re telling our host machine to export the source folder to a container, and we&rsquo;re telling a container to create a matching folder on the container to place that source folder. Essentially we&rsquo;re linking the data from the source, putting in the container where it has the same functionality of a volume, and we&rsquo;ll have access to changes in the data on the host machine within our container.</p>
+
+<p>This is useful for shared projects using version control systems like git. In fact, many projects are using this type of workflow to duplicate development environments across many developers so that there are no surprises when deploying to a hosting provider. This workflow usually consists of having a codebase including some sort of Dockerfile or image included. A developer pulls down the codebase and runs the commands to start and run a container. Once the container is running and connected to the bind mount, any changes on the host machine&rsquo;s files will be reflected immediately in the container.</p>
+
+<p>A bind mount itself is not a volume, but a volume can use a bind mount. Let&rsquo;s try an example.</p>
+
+<p>First, from our host machine, let&rsquo;s create a volume:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker volume create bindMountTest</code></pre></div>
+<p>Now let&rsquo;s take a look to see if our volume exists:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker volume ls
+DRIVER              VOLUME NAME
+local               bindMountTest</code></pre></div>
+<p>Perfect! Now, let&rsquo;s spin up a container using that volume:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -it <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --name bindtest <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --mount source<span style="color:#f92672">=</span>bindMountTest,target<span style="color:#f92672">=</span>/app <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  ubuntu /bin/bash
+root@3ffc3d80141d:/#</code></pre></div>
+<p>For a breakdown of this command, please revisit the <a href="/intro-docker/docker-basics/docker-components/volumes">volumes section</a>.</p>
+
+<p>Now that we&rsquo;re in our container we can run <code>ls -al</code> and see a printout of all of our folders within our <code>/</code> or root folder.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@3ffc3d80141d:/# ls -al
+total <span style="color:#ae81ff">76</span>
+drwxr-xr-x   <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">4096</span> Oct <span style="color:#ae81ff">26</span> <span style="color:#ae81ff">18</span>:13 .
+drwxr-xr-x   <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">4096</span> Oct <span style="color:#ae81ff">26</span> <span style="color:#ae81ff">18</span>:13 ..
+-rwxr-xr-x   <span style="color:#ae81ff">1</span> root root    <span style="color:#ae81ff">0</span> Oct <span style="color:#ae81ff">26</span> <span style="color:#ae81ff">18</span>:13 .dockerenv
+drwxr-xr-x   <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> Oct <span style="color:#ae81ff">26</span> <span style="color:#ae81ff">18</span>:09 app &lt;--- This is where our bindMountTest volume is mounted.
+drwxr-xr-x   <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> Oct <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">21</span>:07 bin
+drwxr-xr-x   <span style="color:#ae81ff">2</span> root root <span style="color:#ae81ff">4096</span> Apr <span style="color:#ae81ff">24</span>  <span style="color:#ae81ff">2018</span> boot
+drwxr-xr-x   <span style="color:#ae81ff">5</span> root root  <span style="color:#ae81ff">360</span> Oct <span style="color:#ae81ff">26</span> <span style="color:#ae81ff">18</span>:13 dev
+<span style="color:#f92672">[</span>The rest of the output is omitted <span style="color:#66d9ef">for</span> brevity.<span style="color:#f92672">]</span></code></pre></div>
+<p>If we <code>cd app</code> we&rsquo;ll see that there&rsquo;s nothing inside this folder, which is fine. We don&rsquo;t have anything in our volume that we&rsquo;re expecting to show up.</p>
+
+<p>Let&rsquo;s exit our container and remove it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@3ffc3d80141d:/# exit
+$ docker container stop bindtest
+$ docker container rm bindtest</code></pre></div>
+<p>Now, let&rsquo;s create some data to test out a bind mount.</p>
+
+<p>First, we&rsquo;re going to need a folder to use as our host data so let&rsquo;s create a <code>~/docksal-training/</code> folder. From your home folder, run <code>mkdir docksal-training</code> and <code>cd docksal-training</code>.</p>
+
+<p>Now let&rsquo;s create a file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ touch bind-mount-test
+$ echo <span style="color:#e6db74">&#34;Testing a bind mount&#34;</span> &gt;&gt; bind-mount-test
+$ cat bind-mount-test</code></pre></div>
+<p>You should see the output <code>Testing a bind mount</code>.</p>
+
+<p>Since Docker runs system-wide we can run the <code>docker</code> command anywhere, so we&rsquo;ll stay in our <code>docksal-training</code> folder for now. Next, we&rsquo;re going to spin up a container using a bind mount. It is much the same as using a volume with two differences:</p>
+
+<ol>
+<li>You&rsquo;ll notice that we&rsquo;re using a <code>type=bind</code> argument for the command.</li>
+<li>When spinning up a container, Docker will automatically create a volume if it does not exist. This is not the case if we use a folder for <code>source</code> and the <code>source</code> folder does not exist. We will see an error and the build will fail.</li>
+</ol>
+
+<p>Okay, let&rsquo;s spin up a container with a bind mount and see what happens.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -it <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --name bindtest <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --mount type<span style="color:#f92672">=</span>bind,source<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>,target<span style="color:#f92672">=</span>/app <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  ubuntu /bin/bash</code></pre></div>
+
+<div class="notices info" ><p><strong>NOTE:</strong> The <code>$(pwd)</code> in the above command references the current directory where the command is run.</p>
+</div>
+
+
+<p>Now, if we go to the <code>/app</code> folder of our container, we should see the file <code>bind-mount-test</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@04899aa02741:/app# ls -al
+total <span style="color:#ae81ff">8</span>
+drwxr-xr-x <span style="color:#ae81ff">4</span> root root  <span style="color:#ae81ff">128</span> Oct <span style="color:#ae81ff">26</span> <span style="color:#ae81ff">20</span>:02 ./
+drwxr-xr-x <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">4096</span> Oct <span style="color:#ae81ff">26</span> <span style="color:#ae81ff">20</span>:00 ../
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root   <span style="color:#ae81ff">21</span> Oct <span style="color:#ae81ff">26</span> <span style="color:#ae81ff">20</span>:02 bind-mount-test</code></pre></div>
+<p>Let&rsquo;s see what&rsquo;s in the <code>bind-mount-test</code> file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@04899aa02741:/app# cat bind-mount-test
+Testing a bind mount</code></pre></div>
+<p>Look at that, we&rsquo;ve brought our file from the host into the container! Wonderful! Now let&rsquo;s do something with it.</p>
+
+<p>In a new terminal window on your host machine, let&rsquo;s do <code>echo &quot;And now I'm changed from the host&quot; &gt;&gt; bind-mount-test</code> within our <code>docksal-training</code> folder.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat bind-mount-test
+Testing a bind mount
+And now I<span style="color:#960050;background-color:#1e0010">&#39;</span>m changed from the host</code></pre></div>
+<p>Let&rsquo;s go back to our container terminal and see what happened.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@04899aa02741:/app# cat bind-mount-test
+Testing a bind mount
+And now I<span style="color:#960050;background-color:#1e0010">&#39;</span>m changed from the host</code></pre></div>
+<p>Outstanding! We now have the ability to change files in the container from our host which means that we can develop on our host and use the power of containers to build and host our code in a repeatable manner.</p>
+
+<p>There are a lot more feature of bind mounts and other mounts that are beyond the scope of this training. For further reading please check out the <a href="https://docs.docker.com/storage/bind-mounts/">Docker Docks</a>.</p>
+
+<p>Up next, we&rsquo;re going to take a look at Docker registries.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/intro-docker/docker-basics/docker-components/storage/volumes/" title="Volumes"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/intro-docker/docker-basics/docker-components/services/" title="Docker Services" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1573323502"></script>
+    <script src="/js/perfect-scrollbar.min.js?1573323502"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1573323502"></script>
+    <script src="/js/jquery.sticky.js?1573323502"></script>
+    <script src="/js/featherlight.min.js?1573323502"></script>
+    <script src="/js/highlight.pack.js?1573323502"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1573323502"></script>
+    <script src="/js/learn.js?1573323502"></script>
+    <script src="/js/hugo-learn.js?1573323502"></script>
+
+    <link href="/mermaid/mermaid.css?1573323502" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1573323502"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>

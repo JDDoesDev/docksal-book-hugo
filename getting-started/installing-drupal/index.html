@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.59.0" />
+    <meta name="description" content="Official Docksal documentation website">
+
+
+    
+<link rel="shortcut icon" href="/images/favicon.png?1573323502" type="image/x-icon" />
+
+    <title>Installing a Drupal Site :: Docksal Documentation</title>
+
+    
+    <link href="/css/nucleus.css?1573323502" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1573323502" rel="stylesheet">
+    <link href="/css/hybrid.css?1573323502" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1573323502" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1573323502" rel="stylesheet">
+    <link href="/css/auto-complete.css?1573323502" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1573323502" rel="stylesheet">
+    <link href="/css/theme.css?1573323502" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1573323502" rel="stylesheet">
+    
+      <link href="/css/theme-docksal.css?1573323502" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1573323502"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+        
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','');</script>
+    
+    
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+
+  </head>
+  <body class="" data-url="/getting-started/installing-drupal/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+    <img src="/images/docksal-horiz-white.svg" alt="Docksal logo">
+</a>
+
+    </div>
+    
+        <div class="searchboxed">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-close"></i></span>
+</div>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction/" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/introduction/">
+          <b>1. </b>Introduction
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction/about/" title="About This Training" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/introduction/about/">
+          About This Training
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/introduction/prerequisites/" title="Prerequisites" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/introduction/prerequisites/">
+          Prerequisites
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/" title="Intro to Docker" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/">
+          <b>2. </b>Intro to Docker
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/" title="Docker Basics" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/">
+          Docker Basics
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/overview/" title="What is Docker?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/overview/">
+          What is Docker?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/" title="How Docker Works" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/">
+          How Docker Works
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/client/" title="Docker Client" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/client/">
+          Docker Client
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/daemon/" title="Docker Daemon" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/daemon/">
+          Docker Daemon
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/images/" title="Docker Images" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/images/">
+          Docker Images
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/containers/" title="Docker Containers" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/containers/">
+          Docker Containers
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/storage/" title="Docker Storage" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/storage/">
+          Docker Storage
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/storage/volumes/" title="Volumes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/storage/volumes/">
+          Volumes
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/storage/bind-mounts/" title="Bind Mounts" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/storage/bind-mounts/">
+          Bind Mounts
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/services/" title="Docker Services" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/services/">
+          Docker Services
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/docker-basics/docker-components/registries/" title="Docker Registries" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/docker-basics/docker-components/registries/">
+          Docker Registries
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/why-containerize/" title="Why Containerize?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/why-containerize/">
+          Why Containerize?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docker/beyond-docker/" title="Beyond Docker" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docker/beyond-docker/">
+          Beyond Docker
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docksal/" title="Intro to Docksal" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docksal/">
+          <b>3. </b>Intro to Docksal
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docksal/whats-docksal/" title="What&#39;s a Docksal" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docksal/whats-docksal/">
+          What&#39;s a Docksal
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docksal/stacks/" title="Docksal Stacks" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docksal/stacks/">
+          Docksal Stacks
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docksal/services/" title="Docksal Services" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docksal/services/">
+          Docksal Services
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docksal/starter-kits/" title="Boilerplates and Starter-kits" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docksal/starter-kits/">
+          Boilerplates and Starter-kits
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/intro-docksal/in-the-container/" title="What&#39;s in the Container?" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/intro-docksal/in-the-container/">
+          What&#39;s in the Container?
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/getting-started/">
+          <b>4. </b>Getting Started
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/installing-docksal/prereqs/" title="Before Installing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting-started/installing-docksal/prereqs/">
+          Before Installing
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/installing-docksal/installation/" title="Installation" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting-started/installing-docksal/installation/">
+          Installation
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/first-fin/" title="Starting the System" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting-started/first-fin/">
+          Starting the System
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/new-project/" title="Beginning with a Boilerplate" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting-started/new-project/">
+          Beginning with a Boilerplate
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/installing-drupal/" title="Installing a Drupal Site" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="/getting-started/installing-drupal/">
+          Installing a Drupal Site
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/customizing/" title="Customizing a Project" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting-started/customizing/">
+          Customizing a Project
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/advanced-customizing/" title="Advanced Customizations" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/getting-started/advanced-customizing/">
+          Advanced Customizations
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/docksal/docksal"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="/versions/"><i class='fas fa-list'></i> Versions</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <div style="text-align:center">
+    
+    <a class="github-button" href="https://github.com/docksal/docksal" data-icon="octicon-star" data-show-count="true" aria-label="Star docksal/docksal on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://github.com/docksal/docksal/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork docksal/docksal on GitHub">Fork</a>
+
+    <p>Made with <i class="fas fa-heart"></i> from <a href="https://docksal.io"><i class="icon docksal"></i></a></p>
+</div>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript">
+ docsearch({
+ apiKey: '656714d8c3d5f7138b76633780faf6ba',
+ indexName: 'docksal',
+ inputSelector: '#search-by',
+ debug: false 
+ });
+     jQuery(document).ready(function() {
+     
+
+     jQuery('input').keydown(function (e) {
+         
+         if (e.which == '37' || e.which == '39') {
+             e.stopPropagation();
+         }
+     });
+ });
+</script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/docksal/docksal/edit/develop/docs/getting-started/installing-drupal/_index.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Modern Local Development With Docksal</a> > <a href='/getting-started/'>Getting Started</a> > Installing a Drupal Site
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#let-s-do-something-a-little-more-advanced">Let&rsquo;s Do Something a Little More Advanced</a>
+<ul>
+<li><a href="#setting-up-for-the-project">Setting up for the project</a></li>
+<li><a href="#spinning-up-drupal">Spinning Up Drupal</a></li>
+<li><a href="#examining-fin-init">Examining <code>fin init</code></a></li>
+<li><a href="#examining-fin-init-site">Examining <code>fin init-site</code></a></li>
+<li><a href="#summary">Summary</a></li>
+</ul></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Installing a Drupal Site
+            </h1>
+          
+
+        
+
+
+
+
+	
+
+<h2 id="let-s-do-something-a-little-more-advanced">Let&rsquo;s Do Something a Little More Advanced</h2>
+
+<p>Now we&rsquo;re going to take an existing repo, pull it down, and spin up a fully functioning Drupal site. To do this, we&rsquo;re going to be using a modified fork of the Docksal Composer-based Drupal 8 repo.</p>
+
+<h3 id="setting-up-for-the-project">Setting up for the project</h3>
+
+<p>To begin, we need to clone the git repository, or &ldquo;repo&rdquo;, at <a href="https://github.com/JDDoesDev/docksal-training/">https://github.com/JDDoesDev/docksal-training/</a>. We&rsquo;ll do this in the <code>projects</code> folder we used in the last section.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd ~/projects
+$ git clone git@github.com:JDDoesDev/docksal-training.git
+$ cd docksal-training
+$ git checkout docksal-training/drupal-site-step-1</code></pre></div>
+<p>Here we&rsquo;re pulling the repo and checking out the Step 1 branch, where we&rsquo;re going to begin working on the project.</p>
+
+<h3 id="spinning-up-drupal">Spinning Up Drupal</h3>
+
+
+<div class="notices info" ><p><strong>NOTE:</strong> There is a possibility that the default settings may not provision enough memory or CPU power in your virtual machine for some steps of the next section. If your build fails, then consult the <a href="#troubleshooting">Troubleshooting</a> portion of this section.</p>
+</div>
+
+
+<p>Now that we&rsquo;ve cloned the repo we&rsquo;re going to run a command we haven&rsquo;t talked about yet: <code>fin init</code></p>
+
+<p>Before we run that, a little info on what <code>fin init</code> is and what it does. <code>fin init</code> is a custom command that is not part of the core Docksal package. Instead, it is customized on a project by project basis, and sometimes is not required. The purpose of <code>fin init</code> is usually to completely start or restart a project from a clean state.</p>
+
+<p>This means that when you run <code>fin init</code>, it will remove all existing project containers and volumes, recreate them, and run any other functions defined within the script.</p>
+
+<p>Let&rsquo;s run <code>fin init</code> and see what happens.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ fin init</code></pre></div>
+<p>The output should start with</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Step <span style="color:#ae81ff">1</span>  Initializing stack...
+Removing containers...
+Removing network docksal-training_default
+WARNING: Network docksal-training_default not found.
+Removing volume docksal-training_cli_home
+WARNING: Volume docksal-training_cli_home not found.
+Removing volume docksal-training_project_root
+WARNING: Volume docksal-training_project_root not found.
+Removing volume docksal-training_db_data
+WARNING: Volume docksal-training_db_data not found.
+Volume docksal_ssh_agent is external, skipping</code></pre></div>
+<p>The <code>WARNING:</code> lines let us know that the project does not already exist, but it also points out that we&rsquo;re attempting to remove the current containers as part of the <code>fin init</code> process.</p>
+
+<p>If all runs according to plan you will see Composer do some things, Docksal do some things, and Drupal do some things, eventually ending with</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>notice<span style="color:#f92672">]</span> Starting Drupal installation. This takes a <span style="color:#66d9ef">while</span>.
+<span style="color:#f92672">[</span>success<span style="color:#f92672">]</span> Installation complete.  User name: admin  User password: 2kEpnqm4dh
+real <span style="color:#ae81ff">26</span>.55
+user <span style="color:#ae81ff">9</span>.47
+sys <span style="color:#ae81ff">3</span>.42
+Open http://docksal-training.docksal in your browser to verify the setup.
+Look <span style="color:#66d9ef">for</span> admin login credentials in the output above.
+DONE!  Completed all initialization steps.</code></pre></div>
+<p>Let&rsquo;s visit our newly created Drupal site at <code>http://docksal-training.docksal</code> and see what we have.</p>
+
+<p>If everything went as expected, then you should see a vanilla Drupal 8 site with no content. However, there were a few things that needed to happen for us to get this spun up and functioning. If you&rsquo;ve ever installed a Drupal site, you know that ordinarily we need to alter some database settings and customize other settings for Drupal to install. Let&rsquo;s take a look at where these things happened with Docksal.</p>
+
+<h3 id="examining-fin-init">Examining <code>fin init</code></h3>
+
+<p>The <code>fin init</code> command exists in two pieces, both of which are inside the <code>.docksal/commands</code> folder.</p>
+
+<p>The files are <code>init</code> and <code>init-site</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">.docksal
+├── commands
+│   ├── init
+│   └── init-site</code></pre></div>
+<p>When you put a file in the <code>.docksal/commands</code> folder, it tells Docksal that you want to make whatever is inside that file available as a command to this project, and this project only. The commands should be written as Bash scripts and it should be understood that the commands, by default, will be run from <strong>outside</strong> the container. This means that if you want something to happen <strong>inside</strong> the container, you need to wrap it in the <code>fin</code> command.</p>
+
+<p>Inside our <code>.docksal/commands/init</code> file we&rsquo;ll notice a few things:</p>
+
+<p>First, our shebang:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash</span></code></pre></div>
+<p>If you&rsquo;re unfamiliar, a <code>shebang</code> tells our system what it should use to run the remainder of the file. In this case, it&rsquo;s being told to run the file as interpreted by <code>bash</code>.</p>
+
+<p>Further down, there are two commands that are being run: <code>fin project reset -f</code> and <code>fin init-site</code>.</p>
+
+<ul>
+<li><p><code>fin project reset -f</code> does exactly what it says it does. It resets the project to a clean state by removing all containers and volumes and restarting them.</p></li>
+
+<li><p><code>fin init-site</code> begins the script defined at <code>.docksal/commands/init-site</code></p></li>
+</ul>
+
+<h3 id="examining-fin-init-site">Examining <code>fin init-site</code></h3>
+
+<p>The opening of <code>.docksal/commands/init-site</code> looks similar to <code>.docksal/commands/init</code>, but there is one line that makes a major difference:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#: exec_target = cli</span></code></pre></div>
+<p>This tells Docksal that we will be running the commands inside the <code>cli</code> container and commands don&rsquo;t need to be wrapped in <code>fin</code>. This is extremely important to remember when customizing our project with our own commands.</p>
+
+<p>The rest of the <code>init-site</code> file is comprised of the steps needed to install Drupal, including:</p>
+
+<ul>
+<li>Running <code>composer install</code></li>
+<li>Copying our custom <code>settings.php</code> and <code>settings.local.php</code> to <code>web/sites/default/</code></li>
+<li>Fixing permissions</li>
+<li>Installing Drupal using Drush</li>
+</ul>
+
+<p>At the end of this script, it outputs how long it took to run, the URL of the new project, and the generated username and password combination.</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>In this section we pulled a customized Drupal 8 boilerplate from a git repo and spun it up on our local dev environment with one command, <code>fin init</code>. We also tested that our site exists by visiting the generated URL. We should have an understanding of what <code>fin init</code> is for and how to use it to start or restart a project from a clean state.</p>
+
+<p>We also examined how <code>fin init</code> uses <code>init-site</code> to build a project and the steps it goes through, including telling Docksal to run the commands within the <code>cli</code> container.</p>
+
+<p>Next, we&rsquo;re going to customize our install and our site to make it a little less default.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>It is likely that your <code>fin init</code> may fail due to a Composer memory error. If you see output similar to the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">The following exception is caused by a lack of memory or swap, or not having swap configured
+Check https://getcomposer.org/doc/articles/troubleshooting.md#proc-open-fork-failed-errors <span style="color:#66d9ef">for</span> details
+
+
+  <span style="color:#f92672">[</span>ErrorException<span style="color:#f92672">]</span>
+  proc_open<span style="color:#f92672">()</span>: fork failed - Cannot allocate memory</code></pre></div>
+<p>That means you&rsquo;ll need to add some resources to your virtual machine.</p>
+
+<ol>
+<li>Run <code>fin system stop</code> to shut down the VM.</li>
+<li>Open your VirtualBox application.</li>
+<li>Highlight the <code>docksal</code> machine, making sure it is in a <code>Powered off</code> state.</li>
+<li>Select &ldquo;Settings&rdquo;.</li>
+<li>Under &ldquo;System &gt; Motherboard&rdquo; increase the memory to 4096 MB</li>
+<li>Under &ldquo;System &gt; Processor&rdquo; increase the CPUs to 4</li>
+<li>Go back to your terminal and run <code>fin system start</code></li>
+<li>Retry <code>fin init</code></li>
+</ol>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/getting-started/new-project/" title="Beginning with a Boilerplate"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/getting-started/customizing/" title="Customizing a Project" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1573323502"></script>
+    <script src="/js/perfect-scrollbar.min.js?1573323502"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1573323502"></script>
+    <script src="/js/jquery.sticky.js?1573323502"></script>
+    <script src="/js/featherlight.min.js?1573323502"></script>
+    <script src="/js/highlight.pack.js?1573323502"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1573323502"></script>
+    <script src="/js/learn.js?1573323502"></script>
+    <script src="/js/hugo-learn.js?1573323502"></script>
+
+    <link href="/mermaid/mermaid.css?1573323502" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1573323502"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>

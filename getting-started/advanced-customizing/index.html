@@ -8,25 +8,25 @@
 
 
     
-<link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573325484" type="image/x-icon" />
+<link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573343101" type="image/x-icon" />
 
     <title>Advanced Customizations :: Docksal Documentation</title>
 
     
-    <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573325484" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/fontawesome-all.min.css?1573325484" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/hybrid.css?1573325484" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/featherlight.min.css?1573325484" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/perfect-scrollbar.min.css?1573325484" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/auto-complete.css?1573325484" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/atom-one-dark-reasonable.css?1573325484" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/theme.css?1573325484" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/hugo-theme.css?1573325484" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573343101" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/fontawesome-all.min.css?1573343101" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/hybrid.css?1573343101" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/featherlight.min.css?1573343101" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/perfect-scrollbar.min.css?1573343101" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/auto-complete.css?1573343101" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/atom-one-dark-reasonable.css?1573343101" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/theme.css?1573343101" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/hugo-theme.css?1573343101" rel="stylesheet">
     
-      <link href="https://jddoesdev.github.io/docksal-training/css/theme-docksal.css?1573325484" rel="stylesheet">
+      <link href="https://jddoesdev.github.io/docksal-training/css/theme-docksal.css?1573343101" rel="stylesheet">
     
 
-    <script src="https://jddoesdev.github.io/docksal-training/js/jquery-3.3.1.min.js?1573325484"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/jquery-3.3.1.min.js?1573343101"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -978,6 +978,32 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/getting-started/keep-it-local/" title="Using Local Files" class="dd-item 
+        
+        
+        
+        ">
+      <a href="https://jddoesdev.github.io/docksal-training/getting-started/keep-it-local/">
+          Using Local Files
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -1123,6 +1149,7 @@
 <li><a href="#project-1-configuring-to-match-production">Project 1: Configuring to Match Production</a></li>
 <li><a href="#project-2-the-front-end-team-requires-a-specific-version-of-npm-and-nodejs">Project 2: The Front-end Team Requires a Specific Version of NPM and NodeJS</a></li>
 <li><a href="#project-3-a-multi-server-project">Project 3: A Multi-server Project</a></li>
+<li><a href="#summary">Summary</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1183,7 +1210,7 @@
 
 <li><p><strong>Configure the PHP version</strong></p>
 
-<p>The PHP version is defined in the <code>cli</code> service. The default image for the <code>cli</code> service is <code>docksal/cli:2.6-php7.2</code>. We can change this in <code>docksal.env</code> by adding the following variable: <code>CLI_IMAGE=docksal/cli:2.8-php7.3</code>. This is the latest version of this image tagged with PHP 7.3.</p>
+<p>The PHP version is defined in the <code>cli</code> service. The default image for the <code>cli</code> service is <code>docksal/cli:2.6-php7.2</code>. We can change this in <code>docksal.env</code> by adding the following variable: <code>CLI_IMAGE=docksal/cli:2.9-php7.3</code>. This is the latest version of this image tagged with PHP 7.3.</p>
 
 <p>Inside <code>~/.docksal/stacks/services.yml</code> the <code>cli</code> section runs logic for the image version: <code>image: ${CLI_IMAGE:-docksal/cli:2.6-php7.2}</code> which checks to see if the <code>CLI_IMAGE</code> environment variable is set, and if not, uses the default.</p></li>
 
@@ -1193,6 +1220,11 @@
 </ol>
 
 <p>Run <code>fin init</code> and watch as the images that aren&rsquo;t on your system are pulled down and your project spins up using PHP 7.3.x.</p>
+
+
+<div class="notices tip" ><p>The completed code for Project 1 can be found at <a href="https://github.com/JDDoesDev/docksal-training-projects/tree/adv-cust-project-1">https://github.com/JDDoesDev/docksal-training-projects/tree/adv-cust-project-1</a></p>
+</div>
+
 
 <h3 id="project-2-the-front-end-team-requires-a-specific-version-of-npm-and-nodejs">Project 2: The Front-end Team Requires a Specific Version of NPM and NodeJS</h3>
 
@@ -1214,7 +1246,7 @@
 <li>Create the Dockerfile at <code>.docksal/services/cli/Dockerfile</code></li>
 
 <li><p>Extend the current image by starting the file with</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> docksal/cli:2.8-php7.3</span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> docksal/cli:2.9-php7.3</span></code></pre></div>
 <p>This tells Docksal that we&rsquo;re still going to use this image, but we&rsquo;re doing something more with it.</p></li>
 
 <li><p>Change the Dockerfile user so that settings aren&rsquo;t changed as <code>root</code></p>
@@ -1243,7 +1275,7 @@
 <li><p>Return control to the <code>root</code> user.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-docker" data-lang="docker"><span style="color:#66d9ef">USER</span><span style="color:#e6db74"> root</span></code></pre></div>
 <p>Our completed Dockerfile should look like this</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile">  FROM docksal/cli:2.8-php7.3<span style="color:#960050;background-color:#1e0010">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile">  FROM docksal/cli:2.9-php7.3<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>  USER docker<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
@@ -1285,7 +1317,7 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ fin up
 Starting services...
 Building cli
-Step <span style="color:#ae81ff">1</span>/4 : FROM docksal/cli:2.8-php7.3
+Step <span style="color:#ae81ff">1</span>/4 : FROM docksal/cli:2.9-php7.3
 ---&gt; bef7b0b7014f
 Step <span style="color:#ae81ff">2</span>/4 : USER docker
 ---&gt; Using cache
@@ -1317,7 +1349,7 @@ Removing intermediate container 70ebd3d709ff
 Successfully built 1c70700b6839
 Successfully tagged my-first-docksal-project_cli:latest</code></pre></div>
 <p>Every step in the Dockerfile is tagged in the image with a hash.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Step <span style="color:#ae81ff">1</span>/4 : FROM docksal/cli:2.8-php7.3
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Step <span style="color:#ae81ff">1</span>/4 : FROM docksal/cli:2.9-php7.3
 ---&gt; bef7b0b7014f</code></pre></div>
 <p>The hash <code>bef7b0b7014f</code> indicates a layer of the image. If something were to break when building the image, this gives us a point of reference to examine the image and see what happened. As you can see, our image built successfully and our system now has the correct versions of NodeJS and NPM installed. We can check this by running the following:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ fin exec node -v
@@ -1329,6 +1361,11 @@ $ fin exec npm -v
 
 <p>Now our front-end team has the version they need installed, and everyone is happy.</p>
 
+
+<div class="notices tip" ><p>The completed code for Project 2 can be found at <a href="https://github.com/JDDoesDev/docksal-training-projects/tree/adv-cust-project-2">https://github.com/JDDoesDev/docksal-training-projects/tree/adv-cust-project-2</a></p>
+</div>
+
+
 <h3 id="project-3-a-multi-server-project">Project 3: A Multi-server Project</h3>
 
 <p>For this lesson we&rsquo;re going to look at the following scenario:</p>
@@ -1338,7 +1375,245 @@ $ fin exec npm -v
 </div>
 
 
-<p>Now, we can build off our last step</p></li>
+<p>Now, we can build off our last step by continuing to grow our <code>docksal.yml</code> and <code>docksal.env</code> files. We&rsquo;re also going to add in some custom commands to make our life a little bit easier in the long run.</p>
+
+<p>Let&rsquo;s start off by listing what we&rsquo;re going to needing for this project:</p>
+
+<ul>
+<li>A Drupal installation on an Acquia Stack</li>
+<li>Multiple domains</li>
+<li>Two different simulated servers</li>
+<li>The ability to connect the two servers</li>
+<li>NodeJS</li>
+<li>npm</li>
+<li>Gatsby CLI</li>
+</ul>
+
+<p>Now, we could simulate the different servers by simply using multiple VirtualHosts in Apache, but that still makes it a little too easy for the Drupal and Gatsby side to communicate. To overcome this, we&rsquo;re going to simulate by keeping the Gatsby server in its own service, separate from the Drupal site.</p>
+
+<p>However, we can still use a shared codebase so that we only need to maintain a single git repo.</p>
+
+<p>Let&rsquo;s get started:</p>
+
+<ol>
+<li><p><strong>Create a Custom Gatsby Service - Dockerfile</strong></p>
+
+<p>To do this we&rsquo;re going to use both a custom Dockerfile and edit our <code>docksal.yml</code>. Let&rsquo;s begin by creating the custom Dockerfile.</p>
+
+<ol>
+<li>Create the file <code>.docksal/services/gatsby/Dockerfile</code></li>
+
+<li><p>We&rsquo;re going to extend the default Docksal CLI image so start the file with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> docksal/cli:2.9-php7.3</span></code></pre></div></li>
+
+<li><p>We want to run all of our installations as our default container user &ldquo;docker&rdquo; so we need to make sure to switch users in the Dockerfile.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">USER</span><span style="color:#e6db74"> docker</span></code></pre></div></li>
+
+<li><p>Now we want to ensure that the commands run in Bash instead of the default shell. We need to tell the image to build that way.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">SHELL</span> [<span style="color:#e6db74">&#34;/bin/bash&#34;</span>, <span style="color:#e6db74">&#34;-c&#34;</span>]</code></pre></div>
+<p>This tells Docker to build this layer of the image as though it were in a Bash shell. The flag <code>-c</code> tells it to get ready for the command.</p></li>
+
+<li><p>This next section should look pretty familiar. We&rsquo;re going to tell the image to add in a locked version of NodeJS, a locked version of NPM, and this time we&rsquo;re adding in Gatsby CLI.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">RUN</span> set -e; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#75715e"># Initialize the user environment (this loads nvm)</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  source $HOME/.profile; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#75715e"># Install the necessary nodejs version</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  nvm install <span style="color:#ae81ff">10</span>.15.0; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  nvm alias default <span style="color:#ae81ff">10</span>.15.0; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  nvm use default; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#75715e"># Install packages</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  npm install -g npm@6.4.1; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  npm install -g gatsby-cli; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#75715e"># Cleanup</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  nvm clear-cache <span style="color:#f92672">&amp;&amp;</span> npm cache clear --force; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#75715e"># Fix npm complaining about permissions and not being able to update</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  sudo rm -rf $HOME/.config;</code></pre></div>
+<p>The biggest changes here from our last project are that we&rsquo;re locking NodeJS at 10.15.0, we&rsquo;re installing npm 6.4.1, and we&rsquo;re installing Gatsby CLI.</p></li>
+
+<li><p>We need to return to the default shell and switch back to the <code>root</code> user.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">SHELL</span> [<span style="color:#e6db74">&#34;/bin/sh&#34;</span>, <span style="color:#e6db74">&#34;-c&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">USER</span><span style="color:#e6db74"> root</span></code></pre></div>
+<p>Just like our earlier <code>SHELL</code> directive, we&rsquo;re running the command to change back to <code>sh</code>, the default shell, and then switching to the <code>root</code> user for further commands.</p></li>
+
+<li><p>Finally, we need to tell our service to expose the port that the development server for Gatsby runs on. In this case, <code>8000</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 8000</span></code></pre></div></li>
+</ol>
+
+<p>The final Dockerfile should look like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> docksal/cli:2.9-php7.3</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">USER</span><span style="color:#e6db74"> docker</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">SHELL</span> [<span style="color:#e6db74">&#34;/bin/bash&#34;</span>, <span style="color:#e6db74">&#34;-c&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Install additional global npm dependencies</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> set -e; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    <span style="color:#75715e"># Initialize the user environment (this loads nvm)</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    source $HOME/.profile; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    <span style="color:#75715e"># Install the necessary nodejs version</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    nvm install <span style="color:#ae81ff">10</span>.15.0; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    nvm alias default <span style="color:#ae81ff">10</span>.15.0; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    nvm use default; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    <span style="color:#75715e"># Install packages</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    npm install -g npm@6.4.1; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    npm install -g gatsby-cli; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    <span style="color:#75715e"># Cleanup</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    nvm clear-cache <span style="color:#f92672">&amp;&amp;</span> npm cache clear --force; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    <span style="color:#75715e"># Fix npm complaining about permissions and not being able to update</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>    sudo rm -rf $HOME/.config;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">SHELL</span> [<span style="color:#e6db74">&#34;/bin/sh&#34;</span>, <span style="color:#e6db74">&#34;-c&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">USER</span><span style="color:#e6db74"> root</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 8000</span></code></pre></div>
+<p>Save the Dockerfile and close it out.</p></li>
+
+<li><p><strong>Create a Custom Gatsby Service - <code>docksal.yml</code></strong></p>
+
+<p>Now that we have our Dockerfile created, we need to tell Docksal to use it when putting together the application. For that, we need to open <code>.docksal/docksal.yml</code> and make some changes.</p>
+
+<p>Remember, indentation matters in a YAML file.</p>
+
+<ol>
+<li><p>In our <code>docksal.yml</code> file we&rsquo;re going to define a new service. This will go under the parent <code>services</code> and should have the same indentation as our customized <code>cli</code> service. We&rsquo;re going to name this service <code>gatsby</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version: <span style="color:#e6db74">&#34;2.1&#34;</span>
+services:
+  cli:
+    ...
+  gatsby:</code></pre></div></li>
+
+<li><p>In order to function within our application, there are a few things that we need to pass to the <code>gatsby</code> service. The host user ID, the host group ID, and the DNS information. We can pass the host user and group IDs through the <code>environment</code> component and the DNS settings through the DNS component.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">gatsby:
+  environment:
+    - HOST_UID
+    - HOST_GID
+  dns:
+    - ${DOCKSAL_DNS1}
+    - ${DOCKSAL_DNS2}</code></pre></div>
+<p>The <code>DOCKSAL_DNS1</code> and <code>DOCKSAL_DNS2</code> variables are defined in the <code>fin</code> binary based on the local IP address of the Docksal VM and the remote DNS server <code>8.8.8.8</code></p></li>
+
+<li><p>Now we need to tell Docksal a little more about our service. We&rsquo;re going to do this by defining the hostname, the image name, and where to build the image from. We can do this by adding a few more items to our <code>docksal.yml</code>. For consistency with other services, we&rsquo;re going to place these immediately following the <code>gatsby:</code> declaration.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">gatsby:
+  hostname: gatsby
+  image: ${COMPOSE_PROJECT_NAME_SAFE}_gatsby
+  build: ${PROJECT_ROOT}/.docksal/services/gatsby
+  environment: ...</code></pre></div>
+<p>The hostname is what we can use to identify this service without having to type the entire service name out.</p>
+
+<p>Also, notice that we did <em>not</em> include <code>Dockerfile</code> in our build. This is on purpose because Docker knows we&rsquo;re looking for a Dockerfile.</p></li>
+
+<li><p>It&rsquo;s time to tell Docksal what domain to use for this service. We&rsquo;re going to do this by using <code>labels</code>. We&rsquo;ll be using the <code>io.docksal.virtual-host</code>, <code>io.docksal.virtual-port</code>, and <code>io.docksal.cert-name</code> labels for this.</p>
+
+<p>One thing to note is that when we run the command to start the development server for Gatsby, it&rsquo;s going to start a NodeJS process so the domain will point directly to this service and load what is being served by NodeJS.</p>
+
+<p>Add the following below your <code>build:</code> line:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">labels:
+  - io.docksal.virtual-host=gatsby.${VIRTUAL_HOST}
+  - io.docksal.virtual-port=<span style="color:#ae81ff">8000</span>
+  - io.docksal.cert-name=${VIRTUAL_HOST_CERT_NAME:-none}</code></pre></div>
+<p>These set the domain, which will be <code>gatsby.mycustomsite.docksal</code>, the port that this domain will point to, and the cert name if we want or need to simulate an SSL environment.</p></li>
+
+<li><p>Next, we need to tell the service where it should look for files to mount a volume. We&rsquo;ll do this using <code>volumes:</code> and point specifically to the <code>gatsby</code> folder.</p>
+
+<p>Below your <code>labels</code> put in the <code>volumes:</code> information</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">volumes:
+   - ${PROJECT_ROOT}/gatsby:/var/www/gatsby
+   - ${SSH_AUTH_SOCK:-docksal_ssh_agent}:${SSH_AUTH_SOCK:-/.ssh-agent}:ro</code></pre></div>
+<p>We&rsquo;re pointing this service to create an unnamed volume mounted to our <code>gatsby</code> folder that will exist as <code>/var/www/gatsby</code> within the container. We&rsquo;re also passing along our SSH keys in case we need them for anything.</p></li>
+
+<li><p>Now some final touches to make life easier. We&rsquo;re going to add in a <code>working_dir</code> that makes it easier for us to run commands in our container, and a little environment variable that allows for us to watch for file changes, which is very handy when working with something using any kind of live-reload functionality.</p>
+
+<p>We do this because the NFS bind we&rsquo;re using for our volumes does <em>not</em> track file changes and send notifications. Instead, we&rsquo;re using <a href="https://www.npmjs.com/package/chokidar">Chokidar</a>, an NPM package that simulates filesystem events.</p>
+
+<p>Add the following to your <code>docksal.yml</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">environment:
+  - HOST_UID
+  - HOST_GID
+  - CHOKIDAR_USEPOLLING=<span style="color:#ae81ff">1</span> <span style="color:#75715e"># &lt;== New Line</span>
+working_dir: /var/www/gatsby <span style="color:#75715e"># &lt;== New Line</span></code></pre></div></li>
+</ol>
+
+<p>Our <code>docksal.env</code> should look like this now:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">version: <span style="color:#e6db74">&#34;2.1&#34;</span>
+services:
+  cli:
+    image: ${COMPOSE_PROJECT_NAME_SAFE}_cli
+    build: ${PROJECT_ROOT}/.docksal/services/cli
+    environment:
+      - COMPOSER_MEMORY_LIMIT
+      - SITE_NAME
+  gatsby:
+    hostname: gatsby
+    image: ${COMPOSE_PROJECT_NAME_SAFE}_gatsby
+    build: ${PROJECT_ROOT}/.docksal/services/gatsby
+    labels:
+      - io.docksal.virtual-host=gatsby.${VIRTUAL_HOST}
+      - io.docksal.virtual-port=<span style="color:#ae81ff">8000</span>
+      - io.docksal.cert-name=${VIRTUAL_HOST_CERT_NAME:-none}
+      - io.docksal.shell=bash
+    volumes:
+      - ${PROJECT_ROOT}/gatsby:/var/www/gatsby
+      - ${SSH_AUTH_SOCK:-docksal_ssh_agent}:${SSH_AUTH_SOCK:-/.ssh-agent}:ro
+    environment:
+      - HOST_UID
+      - HOST_GID
+      - CHOKIDAR_USEPOLLING=<span style="color:#ae81ff">1</span>
+    working_dir: /var/www/gatsby
+    dns:
+      - ${DOCKSAL_DNS1}
+      - ${DOCKSAL_DNS2}</code></pre></div>
+<p>But don&rsquo;t close it out yet. There&rsquo;s a bit more to do here.</p></li>
+
+<li><p><strong>Add a Custom Web Service for the Static Build</strong></p>
+
+<p>In order to fully simulate a two server setup, we want to let our Gatsby static site have its very own web server. We&rsquo;re going to do this by creating a custom web service that will handle the requests to the static site and route them to the Gatsby service and volume.</p>
+
+<ol>
+<li><p>Start by creating another service in your <code>docksal.yml</code> file. Call it <code>gatsby_web</code>. This should be the same indentation as your other services.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  gatsby_web:</code></pre></div></li>
+
+<li><p>We&rsquo;re going to use the <code>docksal/apache:2.4-2.3</code> image for this so let&rsquo;s add that image to our service.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">gatsby_web:
+  image: docksal/apache:<span style="color:#ae81ff">2.4-2.3</span></code></pre></div></li>
+
+<li><p>Next, tell Apache where to point the webserver by creating a volume for the server.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  gatsby_apache:
+    image: docksal/apache:<span style="color:#ae81ff">2.4-2.3</span>
+    volumes:
+      - ${PROJECT_ROOT}/gatsby:/var/www/gatsby</code></pre></div></li>
+
+<li><p>We need to set an environment variable to tell apache where the docroot of our project is, otherwise it defaults to <code>/var/www/docroot</code>. We&rsquo;ll set that next.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    environment:
+      - APACHE_DOCUMENTROOT=/var/www/gatsby/public</code></pre></div></li>
+
+<li><p>Finally, we&rsquo;re going to assign the domain using a label, much like we did with our <code>gatsby</code> service.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    labels:
+      - io.docksal.virtual-host=static.${VIRTUAL_HOST}</code></pre></div></li>
+</ol>
+
+<p>Our new service should look like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  gatsby_apache:
+    image: docksal/apache:<span style="color:#ae81ff">2.4-2.3</span>
+    volumes:
+      - ${PROJECT_ROOT}/gatsby:/var/www/gatsby
+    environment:
+      - APACHE_DOCUMENTROOT=/var/www/gatsby/public
+    labels:
+      - io.docksal.virtual-host=static.${VIRTUAL_HOST}</code></pre></div>
+<p>We are not going to cover building a decoupled project here, but to test this you could create an <code>index.html</code> inside the <code>gatsby\public</code> folder, run <code>fin project start</code> because <code>fin up</code> may not capture all of your changes, and visit <code>static.mycustomsite.docksal</code> to see it load.</p></li>
+</ol>
+
+
+<div class="notices tip" ><p>The completed code for Project 3 can be found at <a href="https://github.com/JDDoesDev/docksal-training-projects/tree/adv-cust-project-3">https://github.com/JDDoesDev/docksal-training-projects/tree/adv-cust-project-3</a></p>
+</div>
+
+
+<h3 id="summary">Summary</h3>
+
+<p>In this section we went through many of the advanced customizations we can do with Docksal services using <code>docksal.yml</code>, <code>docksal.local</code>, and even a couple of custom Dockerfiles. We created a two server application, changed hosting providers, and locked down versions of certain tools to keep our team happy. As you can see, Docksal is an extremely flexible and powerful tool.</p>
+
+<p>Next, we&rsquo;re going to look into using local files for settings and variables that should not live in the repo.</p></li>
 </ol>
 
 
@@ -1906,6 +2181,25 @@ $ fin exec npm -v
             
         
                     
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1921,7 +2215,7 @@ $ fin exec npm -v
 			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/getting-started/customizing/" title="Customizing a Project"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/getting-started/installing-docksal/prereqs/" title="Before Installing" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/getting-started/keep-it-local/" title="Using Local Files" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1931,19 +2225,19 @@ $ fin exec npm -v
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jddoesdev.github.io/docksal-training/js/clipboard.min.js?1573325484"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.min.js?1573325484"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.jquery.min.js?1573325484"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/jquery.sticky.js?1573325484"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/featherlight.min.js?1573325484"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/highlight.pack.js?1573325484"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/clipboard.min.js?1573343101"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.min.js?1573343101"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.jquery.min.js?1573343101"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/jquery.sticky.js?1573343101"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/featherlight.min.js?1573343101"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/highlight.pack.js?1573343101"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/modernizr.custom-3.6.0.js?1573325484"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/learn.js?1573325484"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/hugo-learn.js?1573325484"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/modernizr.custom-3.6.0.js?1573343101"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/learn.js?1573343101"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/hugo-learn.js?1573343101"></script>
 
-    <link href="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.css?1573325484" rel="stylesheet" />
-    <script src="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.js?1573325484"></script>
+    <link href="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.css?1573343101" rel="stylesheet" />
+    <script src="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.js?1573343101"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

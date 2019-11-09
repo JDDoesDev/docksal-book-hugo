@@ -3,143 +3,143 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/introduction/about/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/introduction/about/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/getting-started/installing-docksal/prereqs/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/getting-started/installing-docksal/prereqs/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docker/docker-basics/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docker/docker-basics/docker-components/client/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/docker-components/client/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/introduction/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/introduction/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/introduction/prerequisites/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/introduction/prerequisites/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docker/docker-basics/docker-components/storage/volumes/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/docker-components/storage/volumes/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docker/docker-basics/overview/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/overview/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docksal/whats-docksal/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docksal/whats-docksal/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docker/docker-basics/docker-components/storage/bind-mounts/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/docker-components/storage/bind-mounts/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docker/docker-basics/docker-components/daemon/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/docker-components/daemon/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docksal/stacks/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docksal/stacks/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docker/docker-basics/docker-components/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/docker-components/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/getting-started/installing-docksal/installation/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/getting-started/installing-docksal/installation/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docker/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docker/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docker/why-containerize/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docker/why-containerize/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docker/beyond-docker/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docker/beyond-docker/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docker/docker-basics/docker-components/images/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/docker-components/images/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docksal/services/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docksal/services/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docksal/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docksal/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/getting-started/first-fin/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/getting-started/first-fin/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/getting-started/new-project/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/getting-started/new-project/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docksal/starter-kits/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docksal/starter-kits/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docker/docker-basics/docker-components/containers/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/docker-components/containers/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/getting-started/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/getting-started/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docker/docker-basics/docker-components/storage/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/docker-components/storage/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/getting-started/installing-drupal/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/getting-started/installing-drupal/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docksal/in-the-container/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docksal/in-the-container/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/getting-started/customizing/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/getting-started/customizing/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docker/docker-basics/docker-components/services/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/docker-components/services/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/getting-started/advanced-customizing/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/getting-started/advanced-customizing/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/intro-docker/docker-basics/docker-components/registries/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/docker-components/registries/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/categories/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/categories/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/</loc>
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-book/tags/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/tags/</loc>
   </url>
   
 </urlset>

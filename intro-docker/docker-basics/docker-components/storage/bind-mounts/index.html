@@ -8,25 +8,25 @@
 
 
     
-<link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573402805" type="image/x-icon" />
+<link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573412058" type="image/x-icon" />
 
     <title>Bind Mounts :: Docksal Documentation</title>
 
     
-    <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/fontawesome-all.min.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/hybrid.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/featherlight.min.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/perfect-scrollbar.min.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/auto-complete.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/atom-one-dark-reasonable.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/theme.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/hugo-theme.css?1573402805" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/fontawesome-all.min.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/hybrid.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/featherlight.min.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/perfect-scrollbar.min.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/auto-complete.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/atom-one-dark-reasonable.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/theme.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/hugo-theme.css?1573412058" rel="stylesheet">
     
-      <link href="https://jddoesdev.github.io/docksal-training/css/theme-docksal.css?1573402805" rel="stylesheet">
+      <link href="https://jddoesdev.github.io/docksal-training/css/theme-docksal.css?1573412058" rel="stylesheet">
     
 
-    <script src="https://jddoesdev.github.io/docksal-training/js/jquery-3.3.1.min.js?1573402805"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/jquery-3.3.1.min.js?1573412058"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -70,14 +70,14 @@
   <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/lunr.min.js?1573402805"></script>
-<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/auto-complete.js?1573402805"></script>
+<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/lunr.min.js?1573412058"></script>
+<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/auto-complete.js?1573412058"></script>
 <script type="text/javascript">
   
       var baseurl = "https:\/\/jddoesdev.github.io\/docksal-training\/";
   
 </script>
-<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/search.js?1573402805"></script>
+<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/search.js?1573412058"></script>
 
     
   </div>
@@ -1182,8 +1182,8 @@
 DRIVER              VOLUME NAME
 local               bindMountTest</code></pre></div>
 <p>Perfect! Now, let&rsquo;s spin up a container using that volume:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -it <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --name bindtest <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -i -t <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --name bindTest <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --mount source<span style="color:#f92672">=</span>bindMountTest,target<span style="color:#f92672">=</span>/app <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  ubuntu /bin/bash
 root@3ffc3d80141d:/#</code></pre></div>
@@ -1204,21 +1204,24 @@ drwxr-xr-x   <span style="color:#ae81ff">5</span> root root  <span style="color:
 
 <p>Let&rsquo;s exit our container and remove it.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@3ffc3d80141d:/# exit
-$ docker container stop bindtest
-$ docker container rm bindtest</code></pre></div>
+$ docker container stop bindTest
+$ docker container rm bindTest</code></pre></div>
 <p>Now, let&rsquo;s create some data to test out a bind mount.</p>
 
 <p>First, we&rsquo;re going to need a folder to use as our host data so let&rsquo;s use our <code>~/projects/docksal-training-docker/</code> folder from the Images section. If this folder doesn&rsquo;t already exist, create it relative to your home folder.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd ~
 $ mkdir projects/docksal-training-docker
 $ cd projects/docksal-training-docker</code></pre></div>
-<p>Now let&rsquo;s create a file.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ touch bind-mount-test
+<p>Now let&rsquo;s create a file in a new <code>app</code> folder.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir app <span style="color:#f92672">&amp;&amp;</span> cd app
+$ pwd
+/Users/username/projects/docksal-training-docker/app
+$ touch bind-mount-test
 $ echo <span style="color:#e6db74">&#34;Testing a bind mount&#34;</span> &gt;&gt; bind-mount-test
 $ cat bind-mount-test</code></pre></div>
 <p>You should see the output <code>Testing a bind mount</code>.</p>
 
-<p>Since Docker runs system-wide we can run the <code>docker</code> command anywhere, so we&rsquo;ll stay in our <code>docksal-training</code> folder for now. Next, we&rsquo;re going to spin up a container using a bind mount. It is much the same as using a volume with two differences:</p>
+<p>Since Docker runs system-wide we can run the <code>docker</code> command anywhere, so we&rsquo;ll stay in our <code>docksal-training-docker/app</code> folder for now. Next, we&rsquo;re going to spin up a container using a bind mount. It is much the same as using a volume with two differences:</p>
 
 <ol>
 <li>You&rsquo;ll notice that we&rsquo;re using a <code>type=bind</code> argument for the command.</li>
@@ -1226,8 +1229,8 @@ $ cat bind-mount-test</code></pre></div>
 </ol>
 
 <p>Okay, let&rsquo;s spin up a container with a bind mount and see what happens.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -it <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --name bindtest <span style="color:#ae81ff">\
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -i -t <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --name bindTest <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  --mount type<span style="color:#f92672">=</span>bind,source<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>,target<span style="color:#f92672">=</span>/app <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>  ubuntu /bin/bash</code></pre></div>
 
@@ -1246,12 +1249,14 @@ drwxr-xr-x <span style="color:#ae81ff">1</span> root root <span style="color:#ae
 Testing a bind mount</code></pre></div>
 <p>Look at that, we&rsquo;ve brought our file from the host into the container! Wonderful! Now let&rsquo;s do something with it.</p>
 
-<p>In a new terminal window on your host machine, let&rsquo;s do <code>echo &quot;And now I'm changed from the host&quot; &gt;&gt; bind-mount-test</code> within our <code>docksal-training</code> folder.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cat bind-mount-test
+<p>In a new terminal window on your host machine, let&rsquo;s do <code>echo &quot;And now I'm changed from the host&quot; &gt;&gt; bind-mount-test</code> within our <code>docksal-training-docker/app</code> folder.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">## In the host machine</span>
+$ cat bind-mount-test
 Testing a bind mount
 And now I<span style="color:#960050;background-color:#1e0010">&#39;</span>m changed from the host</code></pre></div>
 <p>Let&rsquo;s go back to our container terminal and see what happened.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@04899aa02741:/app# cat bind-mount-test
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">## In the container</span>
+root@04899aa02741:/app# cat bind-mount-test
 Testing a bind mount
 And now I<span style="color:#960050;background-color:#1e0010">&#39;</span>m changed from the host</code></pre></div>
 <p>Outstanding! We now have the ability to change files in the container from our host which means that we can develop on our host and use the power of containers to build and host our code in a repeatable manner.</p>
@@ -1259,6 +1264,11 @@ And now I<span style="color:#960050;background-color:#1e0010">&#39;</span>m chan
 <p>There are a lot more feature of bind mounts and other mounts that are beyond the scope of this training. For further reading please check out the <a href="https://docs.docker.com/storage/bind-mounts/">Docker Docks</a>.</p>
 
 <p>Up next, we&rsquo;re going to take a look at Docker registries.</p>
+
+
+<div class="notices tip" ><p>You can view the completed code for this section at <a href="https://github.com/JDDoesDev/docksal-training-docker/tree/volumes">https://github.com/JDDoesDev/docksal-training-docker/tree/volumes</a></p>
+</div>
+
 
 
 
@@ -1878,19 +1888,19 @@ And now I<span style="color:#960050;background-color:#1e0010">&#39;</span>m chan
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jddoesdev.github.io/docksal-training/js/clipboard.min.js?1573402805"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.min.js?1573402805"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.jquery.min.js?1573402805"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/jquery.sticky.js?1573402805"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/featherlight.min.js?1573402805"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/highlight.pack.js?1573402805"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/clipboard.min.js?1573412058"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.min.js?1573412058"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.jquery.min.js?1573412058"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/jquery.sticky.js?1573412058"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/featherlight.min.js?1573412058"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/highlight.pack.js?1573412058"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/modernizr.custom-3.6.0.js?1573402805"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/learn.js?1573402805"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/hugo-learn.js?1573402805"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/modernizr.custom-3.6.0.js?1573412058"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/learn.js?1573412058"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/hugo-learn.js?1573412058"></script>
 
-    <link href="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.css?1573402805" rel="stylesheet" />
-    <script src="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.js?1573402805"></script>
+    <link href="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.css?1573412058" rel="stylesheet" />
+    <script src="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.js?1573412058"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

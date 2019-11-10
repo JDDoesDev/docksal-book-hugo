@@ -8,25 +8,25 @@
 
 
     
-<link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573402805" type="image/x-icon" />
+<link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573412058" type="image/x-icon" />
 
     <title>Docker Images :: Docksal Documentation</title>
 
     
-    <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/fontawesome-all.min.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/hybrid.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/featherlight.min.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/perfect-scrollbar.min.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/auto-complete.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/atom-one-dark-reasonable.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/theme.css?1573402805" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/hugo-theme.css?1573402805" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/fontawesome-all.min.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/hybrid.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/featherlight.min.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/perfect-scrollbar.min.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/auto-complete.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/atom-one-dark-reasonable.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/theme.css?1573412058" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/hugo-theme.css?1573412058" rel="stylesheet">
     
-      <link href="https://jddoesdev.github.io/docksal-training/css/theme-docksal.css?1573402805" rel="stylesheet">
+      <link href="https://jddoesdev.github.io/docksal-training/css/theme-docksal.css?1573412058" rel="stylesheet">
     
 
-    <script src="https://jddoesdev.github.io/docksal-training/js/jquery-3.3.1.min.js?1573402805"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/jquery-3.3.1.min.js?1573412058"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -70,14 +70,14 @@
   <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/lunr.min.js?1573402805"></script>
-<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/auto-complete.js?1573402805"></script>
+<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/lunr.min.js?1573412058"></script>
+<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/auto-complete.js?1573412058"></script>
 <script type="text/javascript">
   
       var baseurl = "https:\/\/jddoesdev.github.io\/docksal-training\/";
   
 </script>
-<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/search.js?1573402805"></script>
+<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/search.js?1573412058"></script>
 
     
   </div>
@@ -1188,13 +1188,13 @@ Step <span style="color:#ae81ff">2</span>/2 : RUN echo <span style="color:#e6db7
 Successfully built d2c00859cae2
 Successfully tagged image-example:1.0.0</code></pre></div>
 
-<div class="notices info" ><p><strong>NOTE:</strong> In the previous command the <code>&quot;$(pwd)&quot;</code> refers to the current folder.</p>
+<div class="notices info" ><p><strong>NOTE:</strong> In the previous command the <code>&quot;$(pwd)&quot;</code> is a bash scripting method that takes the output of the <code>pwd</code> command and returns it as a string to print. This creates a reference to the current folder.</p>
 </div>
 
 
 <p>Doesn&rsquo;t seem like a lot, but let&rsquo;s break down the command and output.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker build --tag <span style="color:#e6db74">&#34;image-example:1.0.0&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></div>
-<p>This tells Docker we&rsquo;re building an image with a tag of &ldquo;image-example:1.0.0&rdquo; and that we want to use the Dockerfile in the current folder. Notice that we don&rsquo;t need to include <code>Dockerfile</code> in the command.</p>
+<p>This tells Docker we&rsquo;re building an image with a tag of <code>image-example:1.0.0</code> and that we want to use the Dockerfile in the current folder. Notice that we don&rsquo;t need to include <code>Dockerfile</code> in the command.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Sending build context to Docker daemon  <span style="color:#ae81ff">50</span>.44MB</code></pre></div>
 <p>Remember how we talked about the Docker client primarily communicating with the Docker daemon? That is what this line is representing.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Step <span style="color:#ae81ff">1</span>/2 : FROM ubuntu
@@ -1203,7 +1203,7 @@ Step <span style="color:#ae81ff">2</span>/2 : RUN echo <span style="color:#e6db7
  ---&gt; d2c00859cae2</code></pre></div>
 <p>Each step in the Dockerfile creates a new layer of the image with a snapshot of each instruction saved. If for some reason the build doesn&rsquo;t work, then you can debug using the hash generated by each step. The <code>FROM</code> is pulling the parent image, in this case <code>ubuntu</code>, into the current image. While <code>RUN</code> is running a command on that image and saving the output in the next layer.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Successfully built d2c00859cae2
-Successfully tagged test:file</code></pre></div>
+Successfully tagged image-example:1.0.0</code></pre></div>
 <p>This output gives us a unique identifier of our image and a human-readable name so that we can work with it a bit easier. Now this image is built and ready to be used to create a container.</p>
 
 <p>If this were your first time building this image, you would see a lot of status indicators that look like this:</p>
@@ -1216,14 +1216,21 @@ a8a33d96b4e7: Already exists
 196d943fac59: Pulling fs layer
 ff00d78cbcf3: Pulling fs layer
 8b971b61b7b6: Pulling fs layer
-337d6d904976: Downloading <span style="color:#f92672">[==============================</span>&gt;                    <span style="color:#f92672">]</span>  <span style="color:#ae81ff">7</span>.646MB/12.49MB
+337d6d904976: Downloading <span style="color:#f92672">[===========</span>&gt;                    <span style="color:#f92672">]</span>  <span style="color:#ae81ff">7</span>.646MB/12.49MB
 20c027cb1a77: Waiting
 ba27c2e2de1c: Waiting</code></pre></div>
-<p>What this is doing is following the instructions provided by the Dockerfile to build an image. From our two-line Dockerfile, we&rsquo;re pulling instructions in from another Dockerfile and from another until we reach the base file, most likely ending up at <code>scratch</code>, a base image provided on Docker Hub. Docker is smart enough to use caching to prevent having to re-download images every time a container is spun up, which is one of the reasons it&rsquo;s so quick to load.</p>
+<p>What this is doing is following the instructions provided by the Dockerfile to build an image. From our two-line Dockerfile, we&rsquo;re pulling instructions in from another Dockerfile and from another until we reach the base file, most likely ending up at <a href="https://hub.docker.com/_/scratch">scratch</a>, a base image provided on Docker Hub created with the sole purpose of having a starting point for completely custom images.</p>
+
+<p>Docker is smart enough to use caching to prevent having to re-download images every time a container is spun up, which is one of the reasons it&rsquo;s so quick to load.</p>
 
 <p>So now we have an image, but it&rsquo;s not doing us a lot of good. So, what&rsquo;s next?</p>
 
 <p><a href="https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/docker-components/containers/">Docker Containers</a></p>
+
+
+<div class="notices tip" ><p>You can view the completed code for this section at <a href="https://github.com/JDDoesDev/docksal-training-docker/tree/images">https://github.com/JDDoesDev/docksal-training-docker/tree/images</a></p>
+</div>
+
 
 
 
@@ -1839,19 +1846,19 @@ ba27c2e2de1c: Waiting</code></pre></div>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jddoesdev.github.io/docksal-training/js/clipboard.min.js?1573402805"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.min.js?1573402805"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.jquery.min.js?1573402805"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/jquery.sticky.js?1573402805"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/featherlight.min.js?1573402805"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/highlight.pack.js?1573402805"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/clipboard.min.js?1573412058"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.min.js?1573412058"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.jquery.min.js?1573412058"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/jquery.sticky.js?1573412058"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/featherlight.min.js?1573412058"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/highlight.pack.js?1573412058"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/modernizr.custom-3.6.0.js?1573402805"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/learn.js?1573402805"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/hugo-learn.js?1573402805"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/modernizr.custom-3.6.0.js?1573412058"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/learn.js?1573412058"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/hugo-learn.js?1573412058"></script>
 
-    <link href="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.css?1573402805" rel="stylesheet" />
-    <script src="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.js?1573402805"></script>
+    <link href="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.css?1573412058" rel="stylesheet" />
+    <script src="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.js?1573412058"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

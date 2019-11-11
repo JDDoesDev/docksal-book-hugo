@@ -8,25 +8,25 @@
 
 
     
-<link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573495088" type="image/x-icon" />
+<link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573495757" type="image/x-icon" />
 
     <title>Project 2: The Front-end Team Requires a Specific Version of NPM and NodeJS :: Docksal Documentation</title>
 
     
-    <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/fontawesome-all.min.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/hybrid.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/featherlight.min.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/perfect-scrollbar.min.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/auto-complete.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/atom-one-dark-reasonable.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/theme.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/hugo-theme.css?1573495088" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/fontawesome-all.min.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/hybrid.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/featherlight.min.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/perfect-scrollbar.min.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/auto-complete.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/atom-one-dark-reasonable.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/theme.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/hugo-theme.css?1573495757" rel="stylesheet">
     
-      <link href="https://jddoesdev.github.io/docksal-training/css/theme-docksal.css?1573495088" rel="stylesheet">
+      <link href="https://jddoesdev.github.io/docksal-training/css/theme-docksal.css?1573495757" rel="stylesheet">
     
 
-    <script src="https://jddoesdev.github.io/docksal-training/js/jquery-3.3.1.min.js?1573495088"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/jquery-3.3.1.min.js?1573495757"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -74,14 +74,14 @@
   <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/lunr.min.js?1573495088"></script>
-<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/auto-complete.js?1573495088"></script>
+<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/lunr.min.js?1573495757"></script>
+<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/auto-complete.js?1573495757"></script>
 <script type="text/javascript">
   
       var baseurl = "https:\/\/jddoesdev.github.io\/docksal-training\/";
   
 </script>
-<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/search.js?1573495088"></script>
+<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/search.js?1573495757"></script>
 
     
   </div>
@@ -1249,9 +1249,11 @@
 <ul>
 <li>
 <ul>
-<li>
+<li><a href="#scenario">Scenario</a>
 <ul>
-<li><a href="#scenario">Scenario</a></li>
+<li><a href="#lock-the-versions-in-a-custom-dockerfile">Lock the versions in a custom Dockerfile</a></li>
+<li><a href="#call-the-custom-dockerfile">Call the custom Dockerfile</a></li>
+<li><a href="#update-the-project">Update the project</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1281,7 +1283,7 @@
 
 
 
-<h3 id="scenario">Scenario</h3>
+<h2 id="scenario">Scenario</h2>
 
 <p>For this project, we&rsquo;re going to use the following scenario:</p>
 
@@ -1292,8 +1294,7 @@
 
 <p>To accomplish this, we&rsquo;re going to do a couple of things in order to lock a version of NodeJS and NPM.</p>
 
-<ol>
-<li><p><strong>Lock the versions in a custom Dockerfile</strong></p>
+<h3 id="lock-the-versions-in-a-custom-dockerfile">Lock the versions in a custom Dockerfile</h3>
 
 <p>We&rsquo;re going to create a custom Dockerfile that extends the default <code>cli</code> image within our project.</p>
 
@@ -1352,8 +1353,9 @@
 </span><span style="color:#960050;background-color:#1e0010"></span>      sudo rm -rf $HOME/.config<span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span>  USER root</code></pre></div></li>
+</ol>
 
-<li><p><strong>Call the custom Dockerfile</strong></p>
+<h3 id="call-the-custom-dockerfile">Call the custom Dockerfile</h3>
 
 <p>In <code>docksal.yml</code> we&rsquo;re going to define our <code>cli</code> service.</p>
 
@@ -1365,9 +1367,9 @@
   image: ${COMPOSE_PROJECT_NAME_SAFE}_cli
   build: ${PROJECT_ROOT}/.docksal/services/cli</code></pre></div>
 <p>This names the image based on our project&rsquo;s name and then tells Docksal where to find the file we&rsquo;re going to build the new image from.</p></li>
-</ol></li>
+</ol>
 
-<li><p><strong>Update the project</strong></p>
+<h3 id="update-the-project">Update the project</h3>
 
 <p>Instead of running <code>fin init</code> here, we&rsquo;re going to run <code>fin up</code>. Keep an eye on the output as the new image is built.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ fin up
@@ -1412,16 +1414,13 @@ Successfully tagged my-first-docksal-project_cli:latest</code></pre></div>
 v8.11.0
 
 $ fin exec npm -v
-<span style="color:#ae81ff">6</span>.1.0</code></pre></div></li>
-</ol>
-
+<span style="color:#ae81ff">6</span>.1.0</code></pre></div>
 <p>Now our front-end team has the version they need installed, and everyone is happy.</p>
 
 
 <div class="notices tip" ><p>The completed code for Project 2 can be found at <a href="https://github.com/JDDoesDev/docksal-training-projects/tree/adv-cust-project-2">https://github.com/JDDoesDev/docksal-training-projects/tree/adv-cust-project-2</a></p>
 </div>
-</li>
-</ol>
+
 
 
 <footer class=" footline" >
@@ -2116,19 +2115,19 @@ $ fin exec npm -v
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jddoesdev.github.io/docksal-training/js/clipboard.min.js?1573495088"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.min.js?1573495088"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.jquery.min.js?1573495088"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/jquery.sticky.js?1573495088"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/featherlight.min.js?1573495088"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/highlight.pack.js?1573495088"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/clipboard.min.js?1573495757"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.min.js?1573495757"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.jquery.min.js?1573495757"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/jquery.sticky.js?1573495757"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/featherlight.min.js?1573495757"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/highlight.pack.js?1573495757"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/modernizr.custom-3.6.0.js?1573495088"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/learn.js?1573495088"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/hugo-learn.js?1573495088"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/modernizr.custom-3.6.0.js?1573495757"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/learn.js?1573495757"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/hugo-learn.js?1573495757"></script>
 
-    <link href="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.css?1573495088" rel="stylesheet" />
-    <script src="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.js?1573495088"></script>
+    <link href="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.css?1573495757" rel="stylesheet" />
+    <script src="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.js?1573495757"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

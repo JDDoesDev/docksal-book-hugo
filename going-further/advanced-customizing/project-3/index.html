@@ -8,25 +8,25 @@
 
 
     
-<link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573495088" type="image/x-icon" />
+<link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573495757" type="image/x-icon" />
 
     <title>Project 3: Building a Multi-server Project :: Docksal Documentation</title>
 
     
-    <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/fontawesome-all.min.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/hybrid.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/featherlight.min.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/perfect-scrollbar.min.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/auto-complete.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/atom-one-dark-reasonable.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/theme.css?1573495088" rel="stylesheet">
-    <link href="https://jddoesdev.github.io/docksal-training/css/hugo-theme.css?1573495088" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/fontawesome-all.min.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/hybrid.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/featherlight.min.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/perfect-scrollbar.min.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/auto-complete.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/atom-one-dark-reasonable.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/theme.css?1573495757" rel="stylesheet">
+    <link href="https://jddoesdev.github.io/docksal-training/css/hugo-theme.css?1573495757" rel="stylesheet">
     
-      <link href="https://jddoesdev.github.io/docksal-training/css/theme-docksal.css?1573495088" rel="stylesheet">
+      <link href="https://jddoesdev.github.io/docksal-training/css/theme-docksal.css?1573495757" rel="stylesheet">
     
 
-    <script src="https://jddoesdev.github.io/docksal-training/js/jquery-3.3.1.min.js?1573495088"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/jquery-3.3.1.min.js?1573495757"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -74,14 +74,14 @@
   <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/lunr.min.js?1573495088"></script>
-<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/auto-complete.js?1573495088"></script>
+<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/lunr.min.js?1573495757"></script>
+<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/auto-complete.js?1573495757"></script>
 <script type="text/javascript">
   
       var baseurl = "https:\/\/jddoesdev.github.io\/docksal-training\/";
   
 </script>
-<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/search.js?1573495088"></script>
+<script type="text/javascript" src="https://jddoesdev.github.io/docksal-training/js/search.js?1573495757"></script>
 
     
   </div>
@@ -1249,9 +1249,12 @@
 <ul>
 <li>
 <ul>
-<li>
+<li><a href="#scenario">Scenario</a>
 <ul>
-<li><a href="#scenario">Scenario</a></li>
+<li><a href="#create-a-custom-gatsby-service-dockerfile">Create a Custom Gatsby Service - Dockerfile</a></li>
+<li><a href="#create-a-custom-gatsby-service-docksal-yml">Create a Custom Gatsby Service - <code>docksal.yml</code></a></li>
+<li><a href="#add-a-custom-web-service-for-the-static-build">Add a Custom Web Service for the Static Build</a></li>
+<li><a href="#create-a-custom-command-to-run-commands-inside-our-new-service">Create a custom command to run commands inside our new service</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1281,7 +1284,7 @@
 
 
 
-<h3 id="scenario">Scenario</h3>
+<h2 id="scenario">Scenario</h2>
 
 <p>For this lesson we&rsquo;re going to look at the following scenario:</p>
 
@@ -1310,8 +1313,7 @@
 
 <p>Let&rsquo;s get started:</p>
 
-<ol>
-<li><p><strong>Create a Custom Gatsby Service - Dockerfile</strong></p>
+<h3 id="create-a-custom-gatsby-service-dockerfile">Create a Custom Gatsby Service - Dockerfile</h3>
 
 <p>To do this we&rsquo;re going to use both a custom Dockerfile and edit our <code>docksal.yml</code>. Let&rsquo;s begin by creating the custom Dockerfile.</p>
 
@@ -1382,9 +1384,9 @@
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">USER</span><span style="color:#e6db74"> root</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span><span style="color:#e6db74"> 8000</span></code></pre></div>
-<p>Save the Dockerfile and close it out.</p></li>
+<p>Save the Dockerfile and close it out.</p>
 
-<li><p><strong>Create a Custom Gatsby Service - <code>docksal.yml</code></strong></p>
+<h3 id="create-a-custom-gatsby-service-docksal-yml">Create a Custom Gatsby Service - <code>docksal.yml</code></h3>
 
 <p>Now that we have our Dockerfile created, we need to tell Docksal to use it when putting together the application. For that, we need to open <code>.docksal/docksal.yml</code> and make some changes.</p>
 
@@ -1477,9 +1479,9 @@ services:
       - ${DOCKSAL_DNS1}
       - ${DOCKSAL_DNS2}</code></pre></div>
 <p>But don&rsquo;t close it out yet. There&rsquo;s a bit more to do here.</p></li>
-</ol></li>
+</ol>
 
-<li><p><strong>Add a Custom Web Service for the Static Build</strong></p>
+<h3 id="add-a-custom-web-service-for-the-static-build">Add a Custom Web Service for the Static Build</h3>
 
 <p>In order to fully simulate a two server setup, we want to let our Gatsby static site have its very own web server. We&rsquo;re going to do this by creating a custom web service that will handle the requests to the static site and route them to the Gatsby service and volume.</p>
 
@@ -1514,9 +1516,9 @@ services:
     labels:
       - io.docksal.virtual-host=static.${VIRTUAL_HOST}</code></pre></div>
 <p>We are not going to cover building a decoupled project here, but to test this you could create an <code>index.html</code> inside the <code>gatsby\public</code> folder, run <code>fin project start</code> because <code>fin up</code> may not capture all of your changes, and visit <code>static.mycustomsite.docksal</code> to see it load.</p></li>
-</ol></li>
+</ol>
 
-<li><p><strong>Create a custom command to run commands inside our new service</strong></p>
+<h3 id="create-a-custom-command-to-run-commands-inside-our-new-service">Create a custom command to run commands inside our new service</h3>
 
 <p>It should be noted that normal <code>fin exec</code> commands will not run anything inside this service. If you need to run a command in a custom <code>cli</code>-type service, you&rsquo;ll need to add a few things to the command or create a custom command. An example of this would be running <code>gatsby develop</code>. Also, running <code>fin bash</code> will not get you into the service. For both of these commands you need to tell Docksal which service you are addressing.</p>
 
@@ -1558,9 +1560,9 @@ $ chmod +x gatsby-develop</code></pre></div>
 <li><p>Run the new command:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ fin gatsby-develop</code></pre></div>
 <p>Docksal will now pass in the command to the service and attempt to run <code>gatsby develop</code>, however it will error because we never installed Gatsby in this exercise.</p></li>
-</ol></li>
 
-<li><p><strong>Create a command to shell into your <code>gatsby</code> service</strong></p>
+<li><p><strong>Create a command to shell into your <code>gatsby</code> service</strong></p></li>
+</ol>
 
 <p>We also want an entry point so that we can run more than just one command. For our default <code>cli</code> service, we can just run <code>fin bash</code>, but that will not work for our custom <code>gatsby</code> service. Instead, we&rsquo;re going to create the <code>gatsby-bash</code> command.</p>
 
@@ -1587,7 +1589,6 @@ $ chmod +x gatsby-bash</code></pre></div></li>
 <p>You will now be inside your service, able to run any commands available to your project.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker@gatsby:/var/www/gatsby$</code></pre></div>
 <p>Remember, you can exit out of your service by running the <code>exit</code> command to get back to your host machine&rsquo;s command line.</p></li>
-</ol></li>
 </ol>
 
 
@@ -2288,19 +2289,19 @@ $ chmod +x gatsby-bash</code></pre></div></li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jddoesdev.github.io/docksal-training/js/clipboard.min.js?1573495088"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.min.js?1573495088"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.jquery.min.js?1573495088"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/jquery.sticky.js?1573495088"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/featherlight.min.js?1573495088"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/highlight.pack.js?1573495088"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/clipboard.min.js?1573495757"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.min.js?1573495757"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/perfect-scrollbar.jquery.min.js?1573495757"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/jquery.sticky.js?1573495757"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/featherlight.min.js?1573495757"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/highlight.pack.js?1573495757"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/modernizr.custom-3.6.0.js?1573495088"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/learn.js?1573495088"></script>
-    <script src="https://jddoesdev.github.io/docksal-training/js/hugo-learn.js?1573495088"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/modernizr.custom-3.6.0.js?1573495757"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/learn.js?1573495757"></script>
+    <script src="https://jddoesdev.github.io/docksal-training/js/hugo-learn.js?1573495757"></script>
 
-    <link href="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.css?1573495088" rel="stylesheet" />
-    <script src="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.js?1573495088"></script>
+    <link href="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.css?1573495757" rel="stylesheet" />
+    <script src="https://jddoesdev.github.io/docksal-training/mermaid/mermaid.js?1573495757"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

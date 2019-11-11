@@ -18,8 +18,7 @@
       <guid>https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-1/</guid>
       <description>Scenario For this project, we&amp;rsquo;re going to use the following scenario:
 Your client has a site on Acquia using PHP 7.3. You know that the default Docksal Acquia stack uses PHP 7.2, but you want to match environments. How do you do this?
-  Choose the right stack
-We&amp;rsquo;re going to start by configuring Docksal to use the Acquia stack. In your docksal.env file, find the line DOCKSAL_STACK=pantheon and change it to DOCKSAL_STACK=acquia.</description>
+ Choose the right stack We&amp;rsquo;re going to start by configuring Docksal to use the Acquia stack. In your docksal.env file, find the line DOCKSAL_STACK=pantheon and change it to DOCKSAL_STACK=acquia.</description>
     </item>
     
     <item>

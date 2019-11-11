@@ -10,7 +10,7 @@
     
 <link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573449389" type="image/x-icon" />
 
-    <title>Intro to Docker :: Docksal Documentation</title>
+    <title>Project 2: The Front-end Team Requires a Specific Version of NPM and NodeJS :: Docksal Documentation</title>
 
     
     <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573449389" rel="stylesheet">
@@ -55,7 +55,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
-  <body class="" data-url="/intro-docker/">
+  <body class="" data-url="/going-further/advanced-customizing/project-2/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -186,8 +186,8 @@
   
     
     <li data-nav-id="/intro-docker/" title="Intro to Docker" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="https://jddoesdev.github.io/docksal-training/intro-docker/">
@@ -954,7 +954,7 @@
   
     
     <li data-nav-id="/going-further/" title="Going Further" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1009,7 +1009,7 @@
   
     
     <li data-nav-id="/going-further/advanced-customizing/" title="Advanced Customizations" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1054,7 +1054,7 @@
  
   
     
-      <li data-nav-id="/going-further/advanced-customizing/project-2/" title="Project 2: The Front-end Team Requires a Specific Version of NPM and NodeJS" class="dd-item ">
+      <li data-nav-id="/going-further/advanced-customizing/project-2/" title="Project 2: The Front-end Team Requires a Specific Version of NPM and NodeJS" class="dd-item active">
         <a href="https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-2/">
         Project 2: The Front-end Team Requires a Specific Version of NPM and NodeJS
         <i class="fas fa-check read-icon"></i>
@@ -1210,6 +1210,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1220,7 +1222,19 @@
             
           
           
-            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > Intro to Docker
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > <a href='https://jddoesdev.github.io/docksal-training/going-further/'>Going Further</a> > <a href='https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/'>Advanced Customizations</a> > Project 2: The Front-end Team Requires a Specific Version of NPM and NodeJS
+          
+         
+          
+         
           
          
           
@@ -1229,6 +1243,23 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#scenario">Scenario</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1236,9 +1267,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Project 2: The Front-end Team Requires a Specific Version of NPM and NodeJS
+            </h1>
           
 
         
@@ -1246,90 +1280,155 @@
 
 
 
-	
 
-<h1 id="intro-to-docker">Intro to Docker</h1>
+<h3 id="scenario">Scenario</h3>
 
-<p>An overview of what Docker is and how to use it.</p>
-
+<p>For this project, we&rsquo;re going to use the following scenario:</p>
 
 
+<div class="notices info" ><p>The front-end team is using a theme that is shared across multiple projects as a starter-kit. In order to reduce compatibility errors, they have requested that the Docksal setup accounts for this by locking to a specific version of NodeJS and NPM so that they don&rsquo;t have to completely overhaul the NPM dependencies.</p>
+</div>
 
 
+<p>To accomplish this, we&rsquo;re going to do a couple of things in order to lock a version of NodeJS and NPM.</p>
+
+<ol>
+<li><p><strong>Lock the versions in a custom Dockerfile</strong></p>
+
+<p>We&rsquo;re going to create a custom Dockerfile that extends the default <code>cli</code> image within our project.</p>
+
+<ol>
+<li>Create the Dockerfile at <code>.docksal/services/cli/Dockerfile</code></li>
+
+<li><p>Extend the current image by starting the file with</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> docksal/cli:2.9-php7.3</span></code></pre></div>
+<p>This tells Docksal that we&rsquo;re still going to use this image, but we&rsquo;re doing something more with it.</p></li>
+
+<li><p>Change the Dockerfile user so that settings aren&rsquo;t changed as <code>root</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">USER</span><span style="color:#e6db74"> docker</span></code></pre></div></li>
+
+<li><p>Run commands that will install and lock the version of NodeJS and NPM.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">RUN</span> set -e; <span style="color:#ae81ff">\ </span><span style="color:#75715e"># Note the &#39;;&#39; and the &#39;\&#39;.</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e"># Initialize the user environment (this loads nvm)</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  . $HOME/.profile; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#75715e"># Install the necessary nodejs version and remove the unnecessary version</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  nvm install <span style="color:#ae81ff">8</span>.11.0; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  nvm alias default <span style="color:#ae81ff">8</span>.11.0; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  nvm use default; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  nvm uninstall <span style="color:#ae81ff">10</span>.16.3; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#75715e"># Install packages</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  npm install -g npm@6.1.0; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#75715e"># Cleanup</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  nvm clear-cache <span style="color:#f92672">&amp;&amp;</span> npm cache clear --force; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  <span style="color:#75715e"># Fix npm complaining about permissions and not being able to update</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  sudo rm -rf $HOME/.config</code></pre></div>
+<p>Notice that every command in the <code>RUN</code> directive is followed with <code>; \</code> except the last line. This is because <code>RUN</code> directives are concatinated into a single line when run.</p>
+
+<p>We&rsquo;re sourcing the <code>~/.profile</code> file and getting our NVM (Node Version Manager) alias early on so that we can choose our version. In this case, we&rsquo;re using 8.11.0. Following that, we set this version as our default.</p>
+
+<p>Next, we install our locked version of NPM, clean up our caches, and then run some permission fixes, but we&rsquo;re not done yet.</p></li>
+
+<li><p>Return control to the <code>root</code> user.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-docker" data-lang="docker"><span style="color:#66d9ef">USER</span><span style="color:#e6db74"> root</span></code></pre></div>
+<p>Our completed Dockerfile should look like this</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile">  FROM docksal/cli:2.9-php7.3<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  USER docker<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#75715e"># Install additional global npm dependencies</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  RUN set -e; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      <span style="color:#75715e"># Initialize the user environment (this loads nvm)</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      . $HOME/.profile; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      <span style="color:#75715e"># Install the necessary nodejs version</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      nvm install <span style="color:#ae81ff">8</span>.11.0; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      nvm alias default <span style="color:#ae81ff">8</span>.11.0; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      nvm use default; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      nvm uninstall <span style="color:#ae81ff">10</span>.16.3; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      <span style="color:#75715e"># Install packages</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      npm install -g npm@6.1.0; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      <span style="color:#75715e"># Cleanup</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      nvm clear-cache <span style="color:#f92672">&amp;&amp;</span> npm cache clear --force; <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>      <span style="color:#75715e"># Fix npm complaining about permissions and not being able to update</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>      sudo rm -rf $HOME/.config<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  USER root</code></pre></div></li>
+
+<li><p><strong>Call the custom Dockerfile</strong></p>
+
+<p>In <code>docksal.yml</code> we&rsquo;re going to define our <code>cli</code> service.</p>
+
+<ol>
+<li>Open <code>.docksal/docksal.yml</code></li>
+
+<li><p>Add the following to the <code>cli:</code> section:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">cli:
+  image: ${COMPOSE_PROJECT_NAME_SAFE}_cli
+  build: ${PROJECT_ROOT}/.docksal/services/cli</code></pre></div>
+<p>This names the image based on our project&rsquo;s name and then tells Docksal where to find the file we&rsquo;re going to build the new image from.</p></li>
+</ol></li>
+
+<li><p><strong>Update the project</strong></p>
+
+<p>Instead of running <code>fin init</code> here, we&rsquo;re going to run <code>fin up</code>. Keep an eye on the output as the new image is built.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ fin up
+Starting services...
+Building cli
+Step <span style="color:#ae81ff">1</span>/4 : FROM docksal/cli:2.9-php7.3
+---&gt; bef7b0b7014f
+Step <span style="color:#ae81ff">2</span>/4 : USER docker
+---&gt; Using cache
+---&gt; d563a10b8db0
+Step <span style="color:#ae81ff">3</span>/4 : RUN set -e;   . $HOME/.profile;   nvm install <span style="color:#ae81ff">8</span>.11.0;   nvm alias default <span style="color:#ae81ff">8</span>.11.0;   nvm use default;   npm install -g npm@6.1.0;   nvm clear-cache <span style="color:#f92672">&amp;&amp;</span> npm cache clear --force;   sudo rm -rf $HOME/.config
+---&gt; Running in d503e299f557
+/bin/sh: <span style="color:#ae81ff">39</span>: /home/docker/.profile: <span style="color:#f92672">[[</span>: not found
+Downloading and installing node v8.11.0...
+Downloading https://nodejs.org/dist/v8.11.0/node-v8.11.0-linux-x64.tar.xz...
+<span style="color:#75715e">######################################################################## 100.0%</span>
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v8.11.0 <span style="color:#f92672">(</span>npm v5.6.0<span style="color:#f92672">)</span>
+default -&gt; <span style="color:#ae81ff">8</span>.11.0 <span style="color:#f92672">(</span>-&gt; v8.11.0<span style="color:#f92672">)</span>
+Now using node v8.11.0 <span style="color:#f92672">(</span>npm v5.6.0<span style="color:#f92672">)</span>
+Uninstalled node v10.16.3
+/home/docker/.nvm/versions/node/v8.11.0/bin/npx -&gt; /home/docker/.nvm/versions/node/v8.11.0/lib/node_modules/npm/bin/npx-cli.js
+/home/docker/.nvm/versions/node/v8.11.0/bin/npm -&gt; /home/docker/.nvm/versions/node/v8.11.0/lib/node_modules/npm/bin/npm-cli.js
++ npm@6.1.0
+added <span style="color:#ae81ff">247</span> packages, removed <span style="color:#ae81ff">41</span> packages and updated <span style="color:#ae81ff">129</span> packages in <span style="color:#ae81ff">25</span>.413s
+nvm cache cleared.
+npm WARN using --force I sure hope you know what you are doing.
+Removing intermediate container d503e299f557
+---&gt; 4d9ec2ec20f4
+Step <span style="color:#ae81ff">4</span>/4 : USER root
+---&gt; Running in 70ebd3d709ff
+Removing intermediate container 70ebd3d709ff
+---&gt; 1c70700b6839
+Successfully built 1c70700b6839
+Successfully tagged my-first-docksal-project_cli:latest</code></pre></div>
+<p>Every step in the Dockerfile is tagged in the image with a hash.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Step <span style="color:#ae81ff">1</span>/4 : FROM docksal/cli:2.9-php7.3
+---&gt; bef7b0b7014f</code></pre></div>
+<p>The hash <code>bef7b0b7014f</code> indicates a layer of the image. If something were to break when building the image, this gives us a point of reference to examine the image and see what happened. As you can see, our image built successfully and our system now has the correct versions of NodeJS and NPM installed. We can check this by running the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ fin exec node -v
+v8.11.0
+
+$ fin exec npm -v
+<span style="color:#ae81ff">6</span>.1.0</code></pre></div></li>
+</ol>
+
+<p>Now our front-end team has the version they need installed, and everyone is happy.</p>
 
 
-
-<ul class="children children-li">
-	
-
-	
-		
-			
-		
-	
-
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/" >Docker Basics</a>
+<div class="notices tip" ><p>The completed code for Project 2 can be found at <a href="https://github.com/JDDoesDev/docksal-training-projects/tree/adv-cust-project-2">https://github.com/JDDoesDev/docksal-training-projects/tree/adv-cust-project-2</a></p>
+</div>
 </li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/intro-docker/why-containerize/" >Why Containerize?</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/intro-docker/beyond-docker/" >Beyond Docker</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-	
-</ul>
-
-
-
-
-
-
-
+</ol>
 
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
+
         
         </div>
         
@@ -1414,7 +1513,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1429,9 +1527,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1862,6 +1957,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1876,6 +1972,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1893,6 +1992,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1905,6 +2005,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1922,6 +2025,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1937,6 +2041,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1996,10 +2103,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/introduction/prerequisites/" title="Prerequisites"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-1/" title="Project 1: Configuring to Match Production"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/" title="Docker Basics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-3/" title="Project 3: Building a Multi-server Project" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2029,3 +2136,4 @@
 
   </body>
 </html>
+

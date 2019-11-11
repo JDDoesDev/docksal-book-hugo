@@ -10,7 +10,7 @@
     
 <link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573449389" type="image/x-icon" />
 
-    <title>Intro to Docker :: Docksal Documentation</title>
+    <title>Using Local Files :: Docksal Documentation</title>
 
     
     <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573449389" rel="stylesheet">
@@ -55,7 +55,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
-  <body class="" data-url="/intro-docker/">
+  <body class="" data-url="/going-further/keep-it-local/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -186,8 +186,8 @@
   
     
     <li data-nav-id="/intro-docker/" title="Intro to Docker" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="https://jddoesdev.github.io/docksal-training/intro-docker/">
@@ -954,7 +954,7 @@
   
     
     <li data-nav-id="/going-further/" title="Going Further" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1121,8 +1121,8 @@
   
     
     <li data-nav-id="/going-further/keep-it-local/" title="Using Local Files" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="https://jddoesdev.github.io/docksal-training/going-further/keep-it-local/">
@@ -1210,6 +1210,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1220,7 +1222,13 @@
             
           
           
-            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > Intro to Docker
+            
+            
+          
+          
+            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > <a href='https://jddoesdev.github.io/docksal-training/going-further/'>Going Further</a> > Using Local Files
+          
+         
           
          
           
@@ -1229,6 +1237,27 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#keeping-it-local">Keeping it Local</a>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#a-local-file-scenario-docksal-local-env">A Local File Scenario - <code>docksal-local.env</code></a></li>
+<li><a href="#a-local-file-scenario-docksal-local-env-1">A Local File Scenario - <code>docksal-local.env</code></a></li>
+<li><a href="#sharing-just-enough">Sharing Just Enough</a></li>
+<li><a href="#summary">Summary</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1236,9 +1265,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Using Local Files
+            </h1>
           
 
         
@@ -1248,76 +1280,102 @@
 
 	
 
-<h1 id="intro-to-docker">Intro to Docker</h1>
+<h2 id="keeping-it-local">Keeping it Local</h2>
 
-<p>An overview of what Docker is and how to use it.</p>
+<h3 id="introduction">Introduction</h3>
 
+<p>There are a lot of times when certain information should not be put into version control. For example, API keys, sensitive user information, variables that change depending on who&rsquo;s using the repo, etc. For this, Docksal has local files available.</p>
 
+<p>By default, Docksal operates in <code>local</code> mode. There is an environment variable set, <code>DOCKSAL_ENVIRONMENT=local</code>, that gives your projects access to some new files that you can keep outside of version control. Docksal will look for versions of <code>docksal.env</code> and <code>docksal.yml</code> that have the pattern <code>docksal-${DOCKSAL_ENVIRONMENT}</code> for their filenames and it will use them <strong>in addition</strong> to <code>docksal.env</code> and <code>docksal.yml</code>.</p>
 
+<p>The loading order for the config files is:</p>
 
+<ol>
+<li><code>~/.docksal/docksal.env</code></li>
+<li><code>~/.docksal/stacks/volumes-*.yml</code></li>
+<li><code>~/.docksal/stacks/stack-*.yml</code></li>
+<li><code>${PROJECT_ROOT}/.docksal/docksal.yml</code></li>
+<li><code>${PROJECT_ROOT}/.docksal/docksal.env</code></li>
+<li><code>${PROJECT_ROOT}/.docksal/docksal-${DOCKSAL_ENVIRONMENT}.yml</code></li>
+<li><code>${PROJECT_ROOT}/.docksal/docksal-${DOCKSAL_ENVIRONMENT}.env</code></li>
+</ol>
 
+<p>As the next file loads, it overrides any matching settings in the previous file. So if your <code>~/.docksal/docksal.env</code> contained:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">FOO<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo&#34;</span>
+BAR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bar&#34;</span>
+BAZ<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;baz&#34;</span></code></pre></div>
+<p>and your <code>${PROJECT_ROOT}/.docksal/docksal.env</code> contained:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">FOO<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo too&#34;</span></code></pre></div>
+<p>your project would end up with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">FOO<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;foo too&#34;</span>
+BAR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bar&#34;</span>
+BAZ<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;baz&#34;</span></code></pre></div>
+<p>Remember, they only add or override settings. They will not remove them.</p>
 
-
-
-<ul class="children children-li">
-	
-
-	
-		
-			
-		
-	
-
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/" >Docker Basics</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/intro-docker/why-containerize/" >Why Containerize?</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/intro-docker/beyond-docker/" >Beyond Docker</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-	
-</ul>
+<h3 id="a-local-file-scenario-docksal-local-env">A Local File Scenario - <code>docksal-local.env</code></h3>
 
 
+<div class="notices info" ><p>You are a member of a team using Docksal across multiple developers. The hosting provider requires that your requests to sync your database contain an API key in the request. Every member of the team has a different API key and for security, you do not want to let anyone&rsquo;s key get into the repo. This key will be used in a custom command to trigger a sync.</p>
+</div>
 
+
+<p>Going with what we&rsquo;ve learned so far, this would probably make a great environment variable, so let&rsquo;s create our <code>docksal-local.env</code> file. We&rsquo;ll use our existing <code>docksal-training-projects</code> folder for this, so in a terminal or text editor get into the <code>.docksal</code> folder and create <code>docksal-local.env</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd ~/projects/docksal-training-projects
+$ cd .docksal
+$ touch docksal-local.env</code></pre></div>
+<p>Now open this file and let&rsquo;s add in our API key and our associated user name. In your text editor open <code>docksal-local.env</code> and add the following.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">SECRET_API_KEY<span style="color:#f92672">=</span><span style="color:#ae81ff">12345678</span>
+SECRET_USERNAME<span style="color:#f92672">=</span>my-secure-name</code></pre></div>
+<p>Now save this file. We have our secure info, but we want to make sure this doesn&rsquo;t get into version control. Since we&rsquo;re using git for this training, we&rsquo;re going to put this file in our project&rsquo;s <code>.gitignore</code> file.</p>
+
+<p>In your editor, open up <code>.gitignore</code> in your project&rsquo;s root folder and add the following line to the bottom.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docksal-local.*</code></pre></div>
+<p>This will cover both <code>docksal-local.yml</code> and <code>docksal-local.env</code> and prevent them both from being tracked in version control.</p>
+
+<p>We also need to run <code>fin project restart</code> for the changes to take effect. Any time we change an environment variable it&rsquo;s safer to run <code>fin project restart</code> instead of <code>fin up</code>.</p>
+
+<h3 id="a-local-file-scenario-docksal-local-env-1">A Local File Scenario - <code>docksal-local.env</code></h3>
+
+
+<div class="notices info" ><p>You are a member of a team using Docksal across multiple developers. You&rsquo;ve been tasked with prepping your project for an upgrade from an end of life version of PHP to a current version. Everyone else on your team is using PHP 5.6, but it&rsquo;s time to get ready for the current version. You need to be able to test code, even as it changes from other developers, to make sure it&rsquo;s ready for the upgrade.</p>
+</div>
+
+
+<p>In order to do this, we&rsquo;re going to use <code>docksal-local.yml</code> to override the image that we&rsquo;re using for our <code>cli</code> service, so let&rsquo;s create our <code>docksal-local.yml</code> file. We&rsquo;ll use our existing <code>docksal-training-projects</code> folder for this, so in a terminal or text editor get into the <code>.docksal</code> folder and create <code>docksal-local.yml</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd ~/projects/docksal-training-projects
+$ cd .docksal
+$ touch docksal-local.yml</code></pre></div>
+<p>Open this file and override the image.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">version: <span style="color:#e6db74">&#34;2.1&#34;</span>
+services:
+  cli:
+    image: <span style="color:#e6db74">&#34;docksal/cli:2.9-php7.3&#34;</span></code></pre></div>
+<p>This is all you need. Everything else will be kept from the other service definitions. You would then save this file and run <code>fin up</code> to get your version of the <code>cli</code> image with the current version of PHP. Since we added <code>docksal-local.*</code> to <code>.gitignore</code> this file won&rsquo;t be tracked and nobody else will be affected.</p>
+
+<h3 id="sharing-just-enough">Sharing Just Enough</h3>
+
+<p>It may not be apparent to everyone on your team that you need to create the <code>docksal-local.env</code> file for your project, and it can be a hassle to have to explain it again and again. One common practice is to keep a sanitized example file in the repo with instructions. Usually this is named something like <code>example.docksal-local.env</code> and looks similar to this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">## Copy this file to docksal-local.env and update the values to your own</span>
+<span style="color:#75715e">## username and API key</span>
+
+SECRET_API_KEY<span style="color:#f92672">=</span>
+SECRET_USERNAME<span style="color:#f92672">=</span></code></pre></div>
+<p>This file is not read by Docksal, does not keep any sensitive data, and can be kept in your version control without security concerns.</p>
+
+<p>You could do the same with an <code>example.docksal-local.yml</code> file as well.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e">## To test the codebase against PHP 7.3, copy this file to docksal-local.yml and</span>
+<span style="color:#75715e">## restart your project.</span>
+version: <span style="color:#e6db74">&#34;2.1&#34;</span>
+services:
+  cli:
+    image: <span style="color:#e6db74">&#34;docksal/cli:2.9-php7.3&#34;</span></code></pre></div>
+<h3 id="summary">Summary</h3>
+
+<p>Not everything needs to be shared in the repo. Whether it&rsquo;s a custom override for your specific needs or sensitive information that shouldn&rsquo;t be in a public place, the local configuration overrides make it easier for you to keep the project shared, but keep your custom settings to yourself.</p>
+
+
+<div class="notices tip" ><p>The example files for this section can be found at <a href="https://github.com/JDDoesDev/docksal-training-projects/tree/local-files">https://github.com/JDDoesDev/docksal-training-projects/tree/local-files</a></p>
+</div>
 
 
 
@@ -1328,8 +1386,6 @@
 	
 </footer>
 
-        
-            </div> 
         
         </div>
         
@@ -1414,25 +1470,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -1453,74 +1490,10 @@
 
                     
                     
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                         
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1585,9 +1558,6 @@
             
         
                     
-            
-        
-                    
                         
             
             
@@ -1616,47 +1586,6 @@
                     
                     
 
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -1708,6 +1637,9 @@
             
         
                     
+            
+        
+                    
                         
             
             
@@ -1720,6 +1652,28 @@
                     
                     
 
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
                     
             
         
@@ -1901,6 +1855,108 @@
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -1972,6 +2028,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1996,10 +2053,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/introduction/prerequisites/" title="Prerequisites"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/summary/" title="Summary"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/" title="Docker Basics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/going-further/customizing/" title="Customizing a Project" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

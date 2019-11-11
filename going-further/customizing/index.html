@@ -10,7 +10,7 @@
     
 <link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573449389" type="image/x-icon" />
 
-    <title>Intro to Docker :: Docksal Documentation</title>
+    <title>Customizing a Project :: Docksal Documentation</title>
 
     
     <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573449389" rel="stylesheet">
@@ -55,7 +55,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
-  <body class="" data-url="/intro-docker/">
+  <body class="" data-url="/going-further/customizing/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -186,8 +186,8 @@
   
     
     <li data-nav-id="/intro-docker/" title="Intro to Docker" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="https://jddoesdev.github.io/docksal-training/intro-docker/">
@@ -954,7 +954,7 @@
   
     
     <li data-nav-id="/going-further/" title="Going Further" class="dd-item 
-        
+        parent
         
         
         ">
@@ -983,8 +983,8 @@
   
     
     <li data-nav-id="/going-further/customizing/" title="Customizing a Project" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="https://jddoesdev.github.io/docksal-training/going-further/customizing/">
@@ -1210,6 +1210,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1220,7 +1222,13 @@
             
           
           
-            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > Intro to Docker
+            
+            
+          
+          
+            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > <a href='https://jddoesdev.github.io/docksal-training/going-further/'>Going Further</a> > Customizing a Project
+          
+         
           
          
           
@@ -1229,6 +1237,25 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#make-our-drupal-project-our-own">Make Our Drupal Project Our Own</a>
+<ul>
+<li><a href="#customizing-docksal-env">Customizing <code>docksal.env</code></a></li>
+<li><a href="#customizing">Customizing</a></li>
+<li><a href="#going-further-with-customization">Going Further with Customization</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1236,9 +1263,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Customizing a Project
+            </h1>
           
 
         
@@ -1248,76 +1278,125 @@
 
 	
 
-<h1 id="intro-to-docker">Intro to Docker</h1>
+<h2 id="make-our-drupal-project-our-own">Make Our Drupal Project Our Own</h2>
 
-<p>An overview of what Docker is and how to use it.</p>
+<p>In the last section, we installed a Drupal site using a boilerplate Composer-based template, but what if we want to make changes to some of our installation settings? In this section we&rsquo;re going to look at a few places where we can customize our project to make it a little more our own.</p>
 
+<p>Let&rsquo;s start off by making some adjustments within our <code>docksal.env</code> file.</p>
 
+<h3 id="customizing-docksal-env">Customizing <code>docksal.env</code></h3>
 
+<p>The <code>docksal.env</code> file contains environmental variables for Docksal, outside of the project. These are variables that the project looks for when starting up in order to run the correct settings, build the right services, and others. We&rsquo;re going to start by changing our stack to match a production environment.</p>
 
+<p>In your favorite text editor or IDE of choice, open <code>~/projects/docksal-training-projects/.docksal/docksal.env</code></p>
 
+<p>The default settings here are:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">DOCKSAL_STACK<span style="color:#f92672">=</span>default
+DOCROOT<span style="color:#f92672">=</span>web
+MYSQL_PORT_MAPPING<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;0:3306&#39;</span>
+XDEBUG_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+COMPOSER_MEMORY_LIMIT<span style="color:#f92672">=</span>-1</code></pre></div>
+<p><strong>NOTE:</strong> Comments left out for brevity.</p>
 
+<p>We&rsquo;re going to make a couple of changes now. Let&rsquo;s say we&rsquo;re using Pantheon for hosting. In order to mimic the Pantheon production environment, we can change our stack. Change <code>DOCKSAL_STACK=default</code> to <code>DOCKSAL_STACK=pantheon</code> and save the file.</p>
 
+<p>This won&rsquo;t do anything until we update our project. We&rsquo;re going to do that using the command <code>fin up</code>.</p>
 
-<ul class="children children-li">
-	
+<p>In your terminal, run</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ fin up</code></pre></div>
+<p>This will trigger all of your services to restart and update any that have changed.</p>
 
-	
-		
-			
-		
-	
+<p>If we look at the Pantheon stack we&rsquo;ll see that it&rsquo;s different from the default stack in a number of ways. This file can be found at <code>~/.docksal/stacks/stack-pantheon.yml</code></p>
 
-	
+<p>The Pantheon stack includes:</p>
 
-	
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/" >Docker Basics</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/intro-docker/why-containerize/" >Why Containerize?</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/intro-docker/beyond-docker/" >Beyond Docker</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-	
+<ul>
+<li>Nginx 1.14</li>
+<li>MariaDB 10.1</li>
+<li>PHP 7.2</li>
+<li>Varnish 4.1</li>
+<li>Redis 4.0</li>
+<li>ApacheSolr 3.6</li>
 </ul>
 
+<p>And these changes will be reflected when you run <code>fin up</code>.  Let&rsquo;s look at the output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docksal-training_cli_1 is up-to-date
+Recreating docksal-training_db_1    ... <span style="color:#66d9ef">done</span>
+Recreating docksal-training_web_1 ... <span style="color:#66d9ef">done</span>
+Creating docksal-training_solr_1  ... <span style="color:#66d9ef">done</span>
+Creating docksal-training_redis_1 ... <span style="color:#66d9ef">done</span>
+Creating docksal-training_varnish_1 ... <span style="color:#66d9ef">done</span>
+Waiting <span style="color:#66d9ef">for</span> project stack to become ready...
+Waiting <span style="color:#66d9ef">for</span> project stack to become ready...
+Project URL: http://docksal-training.docksal</code></pre></div>
+<p>As you can see, we&rsquo;ve created a <code>solr</code>, <code>redis</code>, and <code>varnish</code> service in our project now. This gives us access to these services locally to mimic settings we may have on our production server.</p>
+
+<p>Great, now let&rsquo;s make some more edits.</p>
+
+<p>We&rsquo;re going to enable Xdebug and change our project&rsquo;s domain through <code>docksal.env</code>. Change the line <code>XDEBUG_ENABLED=0</code> to <code>XDEBUG_ENABLED=1</code> and add the line <code>VIRTUAL_HOST=mycustomsite.docksal</code> in your <code>docksal.env</code> file.</p>
+
+<p>Save and run <code>fin up</code> again.</p>
+
+<p>Let&rsquo;s look at the output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ fin up
+Starting services...
+Recreating docksal-training_cli_1 ...
+Recreating docksal-training_solr_1 ...
+Recreating docksal-training_cli_1  ... <span style="color:#66d9ef">done</span>
+Recreating docksal-training_solr_1    ... <span style="color:#66d9ef">done</span>
+Recreating docksal-training_web_1  ... <span style="color:#66d9ef">done</span>
+Recreating docksal-training_varnish_1 ... <span style="color:#66d9ef">done</span>
+Waiting <span style="color:#66d9ef">for</span> project stack to become ready...
+Project URL: http://mycustomsite.docksal</code></pre></div>
+<p>Notice how our <code>Project URL:</code> has changed to reflect our new domain. Go ahead and visit it to make sure everything is still working.</p>
+
+<h3 id="customizing">Customizing</h3>
+
+<p>As a hypothetical, let&rsquo;s say that we want to change the site name on install. We could do this by simply editing <code>.docksal/commands/init-site</code> which makes sense, but alternatively we could add an environment variable to <code>docksal.env</code> and alter <code>init-site</code> once. Let&rsquo;s try it.</p>
+
+<ol>
+<li>In your text editor, open <code>docksal.env</code></li>
+<li>Add the line <code>SITE_NAME=&quot;This Site Has A Different Name&quot;</code> to the bottom of the file.</li>
+<li>In your text editor, open <code>.docksal/commands/init-site</code></li>
+<li>Look for the lines that install Drupal using Drush, around line 89.</li>
+<li>Change the line that starts with <code>--site-name=</code> to <code>--site-name=&quot;${SITE_NAME}&quot;</code>
+
+<ul>
+<li><strong>NOTE:</strong> The double-quotes are important here.</li>
+</ul></li>
+<li>Save both files.</li>
+</ol>
+
+<p>If we were to run <code>fin init</code> now, the site name wouldn&rsquo;t work. That&rsquo;s because, as mentioned before, the <code>init-site</code> script runs <em>inside</em> the <code>cli</code> container. We need to pass this variable so that the <code>cli</code> container has access.</p>
+
+<p>To do that, we&rsquo;re going to need to alter the <code>docksal.yml</code> file, but first, what is <code>docksal.yml</code>?</p>
+
+<p><code>docksal.yml</code> is a <code>docker-compose</code> file that defines and helps tie services together. Our default <code>docksal.yml</code> is pretty bare, but it contains something that will help us out. Let&rsquo;s take a look. Open <code>.docksal/docksal.yml</code>. You should see:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">version: <span style="color:#e6db74">&#34;2.1&#34;</span>
+services:
+  cli:
+    environment:
+      - COMPOSER_MEMORY_LIMIT</code></pre></div>
+<p>This doesn&rsquo;t define any services by itself. Those are defined in the Docksal stacks, but in the processing order, Docksal looks for this file and uses it to alter the default behavior or the current <code>cli</code> service. Right now we&rsquo;re passing in the <code>COMPOSER_MEMORY_LIMIT</code> variable that we have defined in <code>docksal.env</code>.</p>
+
+<p>To get access to our new site name, we need to tell Docksal to pass the <code>SITE_NAME</code> variable as well.</p>
+
+<ol>
+<li>In your text editor open <code>docksal.yml</code></li>
+<li>In the <code>environment</code> section, add the line <code>- SITE_NAME</code>
+<strong>NOTE:</strong> Indentation of this line must match the indentation of the <code>- COMPOSER_MEMORY_LIMIT</code> line, otherwise the YAML will not work.</li>
+<li>Save your file</li>
+</ol>
+
+<p>Now we&rsquo;re ready to run <code>fin init</code>. After everything has run, visit your site at <code>http://mycustomsite.docksal/</code> and notice that the site name has changed. Now we can easily change the site name in one spot.</p>
+
+<h3 id="going-further-with-customization">Going Further with Customization</h3>
+
+<p>There are many other customizations that we can do with our <code>docksal.env</code> and <code>docksal.yml</code> files. We can add labels to services which are used to define functionality, we can change domain names, and we can even define our own services and variables to be used for our projects. In the next section we&rsquo;re going to explore some more advanced customizations using the <code>docksal.env</code> and <code>docksal.yml</code> files.</p>
 
 
+<div class="notices info" ><p><strong>NOTE:</strong> The code for this section can be found in the <code>drupal-site-step-2</code> branch of [github.com/JDDoesDev/docksal-training-projects].</p>
+</div>
 
 
 
@@ -1328,8 +1407,6 @@
 	
 </footer>
 
-        
-            </div> 
         
         </div>
         
@@ -1414,7 +1491,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1429,9 +1505,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1862,6 +1935,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1876,6 +1950,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1892,6 +1967,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1996,10 +2074,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/introduction/prerequisites/" title="Prerequisites"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/going-further/" title="Going Further"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/" title="Docker Basics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/" title="Advanced Customizations" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

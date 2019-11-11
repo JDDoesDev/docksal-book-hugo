@@ -10,7 +10,7 @@
     
 <link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573449389" type="image/x-icon" />
 
-    <title>Intro to Docker :: Docksal Documentation</title>
+    <title>Project 1: Configuring to Match Production :: Docksal Documentation</title>
 
     
     <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573449389" rel="stylesheet">
@@ -55,7 +55,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
-  <body class="" data-url="/intro-docker/">
+  <body class="" data-url="/going-further/advanced-customizing/project-1/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -186,8 +186,8 @@
   
     
     <li data-nav-id="/intro-docker/" title="Intro to Docker" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="https://jddoesdev.github.io/docksal-training/intro-docker/">
@@ -954,7 +954,7 @@
   
     
     <li data-nav-id="/going-further/" title="Going Further" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1009,7 +1009,7 @@
   
     
     <li data-nav-id="/going-further/advanced-customizing/" title="Advanced Customizations" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1035,7 +1035,7 @@
  
   
     
-      <li data-nav-id="/going-further/advanced-customizing/project-1/" title="Project 1: Configuring to Match Production" class="dd-item ">
+      <li data-nav-id="/going-further/advanced-customizing/project-1/" title="Project 1: Configuring to Match Production" class="dd-item active">
         <a href="https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-1/">
         Project 1: Configuring to Match Production
         <i class="fas fa-check read-icon"></i>
@@ -1210,6 +1210,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1220,7 +1222,19 @@
             
           
           
-            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > Intro to Docker
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > <a href='https://jddoesdev.github.io/docksal-training/going-further/'>Going Further</a> > <a href='https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/'>Advanced Customizations</a> > Project 1: Configuring to Match Production
+          
+         
+          
+         
           
          
           
@@ -1229,6 +1243,23 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#scenario">Scenario</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1236,9 +1267,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Project 1: Configuring to Match Production
+            </h1>
           
 
         
@@ -1246,81 +1280,47 @@
 
 
 
-	
 
-<h1 id="intro-to-docker">Intro to Docker</h1>
+<h3 id="scenario">Scenario</h3>
 
-<p>An overview of what Docker is and how to use it.</p>
-
+<p>For this project, we&rsquo;re going to use the following scenario:</p>
 
 
+<div class="notices info" ><p>Your client has a site on Acquia using PHP 7.3. You know that the default Docksal Acquia stack uses PHP 7.2, but you want to match environments. How do you do this?</p>
+</div>
 
 
+<ol>
+<li><p><strong>Choose the right stack</strong></p>
+
+<p>We&rsquo;re going to start by configuring Docksal to use the Acquia stack. In your <code>docksal.env</code> file, find the line <code>DOCKSAL_STACK=pantheon</code> and change it to <code>DOCKSAL_STACK=acquia</code>.</p></li>
+
+<li><p><strong>Configure the docroot</strong></p>
+
+<p>Acquia projects require that the Drupal installation live in <code>docroot</code> instead of <code>web</code>. This is the default webroot for Docksal, but to remain verbose we&rsquo;re going to change the environment variable. Find the line <code>DOCROOT=web</code> and change it to <code>DOCROOT=docroot</code></p></li>
+
+<li><p><strong>Update docroot and composer.json</strong></p>
+
+<p>Since our projects have been using the <code>web</code> folder for the docroot so far, we need to rename it. This is most easily accomplished in an IDE or in your system&rsquo;s version of a file explorer, however you can do this on a macOS or Linux terminal by using the <code>mv</code> command. <code>mv web docroot</code>. In addition, we also need to update our <code>composer.json</code> file to point to the correct folders.</p>
+
+<p>In <code>composer.json</code>, in the <code>extra.installer-paths</code> section, you need to change all instances of <code>web/</code> to <code>docroot/</code>. Example: <code>&quot;web/core&quot;: [&quot;type:drupal-core&quot;],</code> becomes <code>&quot;docroot/core&quot;: [&quot;type:drupal-core&quot;],</code></p></li>
+
+<li><p><strong>Configure the PHP version</strong></p>
+
+<p>The PHP version is defined in the <code>cli</code> service. The default image for the <code>cli</code> service is <code>docksal/cli:2.6-php7.2</code>. We can change this in <code>docksal.env</code> by adding the following variable: <code>CLI_IMAGE=docksal/cli:2.9-php7.3</code>. This is the latest version of this image tagged with PHP 7.3.</p>
+
+<p>Inside <code>~/.docksal/stacks/services.yml</code> the <code>cli</code> section runs logic for the image version: <code>image: ${CLI_IMAGE:-docksal/cli:2.6-php7.2}</code> which checks to see if the <code>CLI_IMAGE</code> environment variable is set, and if not, uses the default.</p></li>
+
+<li><p><strong>Update your project</strong></p>
+
+<p>The easiest way to do this is to run <code>fin up</code>, however if you have not initialized your project yet, you should run <code>fin init</code>. For this exercise we&rsquo;re going to run <code>fin init</code>.</p></li>
+</ol>
+
+<p>Run <code>fin init</code> and watch as the images that aren&rsquo;t on your system are pulled down and your project spins up using PHP 7.3.x.</p>
 
 
-
-<ul class="children children-li">
-	
-
-	
-		
-			
-		
-	
-
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/" >Docker Basics</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/intro-docker/why-containerize/" >Why Containerize?</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/intro-docker/beyond-docker/" >Beyond Docker</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-	
-</ul>
-
-
-
-
-
-
+<div class="notices tip" ><p>The completed code for Project 1 can be found at <a href="https://github.com/JDDoesDev/docksal-training-projects/tree/adv-cust-project-1">https://github.com/JDDoesDev/docksal-training-projects/tree/adv-cust-project-1</a></p>
+</div>
 
 
 
@@ -1328,8 +1328,7 @@
 	
 </footer>
 
-        
-            </div> 
+
         
         </div>
         
@@ -1414,7 +1413,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1429,9 +1427,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1862,6 +1857,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1876,6 +1872,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1893,6 +1892,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1905,6 +1905,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1921,6 +1922,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1996,10 +2000,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/introduction/prerequisites/" title="Prerequisites"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/" title="Advanced Customizations"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/" title="Docker Basics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-2/" title="Project 2: The Front-end Team Requires a Specific Version of NPM and NodeJS" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2029,3 +2033,4 @@
 
   </body>
 </html>
+

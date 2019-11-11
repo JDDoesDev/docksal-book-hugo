@@ -11,6 +11,10 @@
   </url>
   
   <url>
+    <loc>https://jddoesdev.github.io/docksal-training/going-further/customizing/</loc>
+  </url>
+  
+  <url>
     <loc>https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/</loc>
   </url>
   
@@ -36,6 +40,10 @@
   
   <url>
     <loc>https://jddoesdev.github.io/docksal-training/intro-docksal/whats-docksal/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/</loc>
   </url>
   
   <url>
@@ -87,6 +95,10 @@
   </url>
   
   <url>
+    <loc>https://jddoesdev.github.io/docksal-training/going-further/keep-it-local/</loc>
+  </url>
+  
+  <url>
     <loc>https://jddoesdev.github.io/docksal-training/getting-started/new-project/</loc>
   </url>
   
@@ -107,6 +119,10 @@
   </url>
   
   <url>
+    <loc>https://jddoesdev.github.io/docksal-training/going-further/</loc>
+  </url>
+  
+  <url>
     <loc>https://jddoesdev.github.io/docksal-training/getting-started/installing-drupal/</loc>
   </url>
   
@@ -115,15 +131,7 @@
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-training/getting-started/customizing/</loc>
-  </url>
-  
-  <url>
     <loc>https://jddoesdev.github.io/docksal-training/intro-docker/docker-basics/docker-components/services/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jddoesdev.github.io/docksal-training/getting-started/advanced-customizing/</loc>
   </url>
   
   <url>
@@ -131,7 +139,19 @@
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-training/getting-started/keep-it-local/</loc>
+    <loc>https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-2/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-3/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/summary/</loc>
   </url>
   
   <url>

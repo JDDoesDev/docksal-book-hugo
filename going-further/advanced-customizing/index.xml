@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Advanced Customizations on Docksal Documentation</title>
+    <link>https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/</link>
+    <description>Recent content in Advanced Customizations on Docksal Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Project 1: Configuring to Match Production</title>
+      <link>https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-1/</guid>
+      <description>Scenario For this project, we&amp;rsquo;re going to use the following scenario:
+Your client has a site on Acquia using PHP 7.3. You know that the default Docksal Acquia stack uses PHP 7.2, but you want to match environments. How do you do this?
+  Choose the right stack
+We&amp;rsquo;re going to start by configuring Docksal to use the Acquia stack. In your docksal.env file, find the line DOCKSAL_STACK=pantheon and change it to DOCKSAL_STACK=acquia.</description>
+    </item>
+    
+    <item>
+      <title>Project 2: The Front-end Team Requires a Specific Version of NPM and NodeJS</title>
+      <link>https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-2/</guid>
+      <description>Scenario For this project, we&amp;rsquo;re going to use the following scenario:
+The front-end team is using a theme that is shared across multiple projects as a starter-kit. In order to reduce compatibility errors, they have requested that the Docksal setup accounts for this by locking to a specific version of NodeJS and NPM so that they don&amp;rsquo;t have to completely overhaul the NPM dependencies.
+ To accomplish this, we&amp;rsquo;re going to do a couple of things in order to lock a version of NodeJS and NPM.</description>
+    </item>
+    
+    <item>
+      <title>Project 3: Building a Multi-server Project</title>
+      <link>https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-3/</guid>
+      <description>Scenario For this lesson we&amp;rsquo;re going to look at the following scenario:
+A client wants a decoupled solution to be hosted on two servers. The Drupal side will be hosted on Acquia and the front-end side will be hosted on a different server. The project is going to use GatsbyJS for the front-end.
+ Now, we can build off our last step by continuing to grow our docksal.yml and docksal.</description>
+    </item>
+    
+    <item>
+      <title>Summary</title>
+      <link>https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/summary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/summary/</guid>
+      <description>Summary In this section we went through many of the advanced customizations we can do with Docksal services using docksal.yml, docksal.local, and even a couple of custom Dockerfiles. We created a two server application, changed hosting providers, wrote our own fin commands, and locked down versions of certain tools to keep our team happy. As you can see, Docksal is an extremely flexible and powerful tool.
+Next, we&amp;rsquo;re going to look into using local files for settings and variables that should not live in the repo.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -10,7 +10,7 @@
     
 <link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573619469" type="image/x-icon" />
 
-    <title>Advanced Customizations :: Docksal Documentation</title>
+    <title>Adding Docksal to a Basic Project :: Docksal Documentation</title>
 
     
     <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573619469" rel="stylesheet">
@@ -55,7 +55,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
-  <body class="" data-url="/going-further/advanced-customizing/">
+  <body class="" data-url="/going-further/existing-project/project-1/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -1009,8 +1009,8 @@
   
     
     <li data-nav-id="/going-further/advanced-customizing/" title="Advanced Customizations" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/">
@@ -1121,7 +1121,7 @@
   
     
     <li data-nav-id="/going-further/existing-project/" title="Adding Docksal to an Existing Project" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1147,7 +1147,7 @@
  
   
     
-      <li data-nav-id="/going-further/existing-project/project-1/" title="Adding Docksal to a Basic Project" class="dd-item ">
+      <li data-nav-id="/going-further/existing-project/project-1/" title="Adding Docksal to a Basic Project" class="dd-item active">
         <a href="https://jddoesdev.github.io/docksal-training/going-further/existing-project/project-1/">
         Adding Docksal to a Basic Project
         <i class="fas fa-check read-icon"></i>
@@ -1281,7 +1281,13 @@
             
           
           
-            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > <a href='https://jddoesdev.github.io/docksal-training/going-further/'>Going Further</a> > Advanced Customizations
+            
+            
+          
+          
+            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > <a href='https://jddoesdev.github.io/docksal-training/going-further/'>Going Further</a> > <a href='https://jddoesdev.github.io/docksal-training/going-further/existing-project/'>Adding Docksal to an Existing Project</a> > Adding Docksal to a Basic Project
+          
+         
           
          
           
@@ -1298,7 +1304,10 @@
 <ul>
 <li>
 <ul>
-<li><a href="#truly-making-a-project-custom">Truly Making a Project Custom</a></li>
+<li><a href="#scenario">Scenario</a>
+<ul>
+<li><a href="#summary">Summary</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -1317,7 +1326,7 @@
           
             <h1>
               
-              Advanced Customizations
+              Adding Docksal to a Basic Project
             </h1>
           
 
@@ -1326,100 +1335,97 @@
 
 
 
-	
 
-<h2 id="truly-making-a-project-custom">Truly Making a Project Custom</h2>
-
-<p>In the last section we customized a few things to change our domain name and the site name. In this section, we&rsquo;re going to show how to extend a stack, change versions of images, and even customize and extend Docksal images using a Dockerfile.</p>
-
-<p>In the following projects, we&rsquo;re going to explore a few scenarios and solutions that can be provided with Docksal. Finished code is available on <a href="https://github.com/jddoesdev/docksal-training-projects">Github</a> for each scenario, but you&rsquo;ll get the most out of it if you follow them in order and work through them yourself.</p>
+<h2 id="scenario">Scenario</h2>
 
 
+<div class="notices info" ><p>As lead developer on a team you&rsquo;ve run into a lot of issues with your teammates submitting features for code review and you notice that your continuous integration testing fails frequently. When you pull down to test for yourself, you see a lot of code that was deprecated in a previous version of PHP and will break if run on the version of PHP that your hosting provider uses.</br>
+After some conversations, you find out that one of your teammates is using MAMP while another is using native Apache and PHP 5.6 installed on their system. A third is using a Vagrant setup that hasn&rsquo;t been maintained in over a year.</p>
+</div>
 
 
+<p>This is not an uncommon scenario. While not every team should have a prescribed local dev environment, if time is lost because there are errors affecting deploying code efficiently, then it may be time to consider a strong recommendation.</p>
+
+<p>Let&rsquo;s look at the following code that is valid in PHP 5.6:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+$string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;foo, bar, baz&#39;</span>;
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">get_array</span>($string) {
+  $array <span style="color:#f92672">=</span> <span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;, &#39;</span>, $string);
+
+  <span style="color:#66d9ef">return</span> $array;
+}
+
+<span style="color:#a6e22e">var_dump</span>(<span style="color:#a6e22e">get_array</span>($string));
+
+<span style="color:#75715e">?&gt;</span>
+</code></pre></div>
+<p>If we were to run this using a system that has PHP 5.6 installed, which it shouldn&rsquo;t be, the only thing we might see is a deprecation warning.</p>
+
+<pre><code>Deprecated: Function split() is deprecated in /var/www/public/test.php on line 6
+array(3) { [0]=&gt; string(3) &quot;foo&quot; [1]=&gt; string(3) &quot;bar&quot; [2]=&gt; string(3) &quot;baz&quot; }
+</code></pre>
+
+<p>However, the <code>split()</code> PHP function was removed in 7.0. If we try running this same code on a server with PHP 7.0 or greater, we&rsquo;d get this error:</p>
+
+<pre><code>Fatal error: Uncaught Error: Call to undefined function split() in /var/www/public/test.php:6 Stack trace: #0 /var/www/public/test.php(11): get_array('foo, bar, baz') #1 {main} thrown in /var/www/public/test.php on line 6
+</code></pre>
+
+<p>This can be frustrating to everyone involved as it is a source of the &ldquo;But it worked on my machine!&rdquo; problem. Let&rsquo;s get rid of this problem by adding Docksal to the project repo and allowing everyone else to reap the benefits of using a pre-set local development environment.</p>
+
+<p>For this exercise we&rsquo;re going to create a new project and add Docksal to it.</p>
+
+<ol>
+<li><p>In our <code>~/projects/</code> folder create the <code>add-docksal</code> folder.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd ~/projects/
+$ mkdir add-docksal
+$ cd add-docksal</code></pre></div></li>
+
+<li><p>Create an <code>index.html</code> file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ touch index.html</code></pre></div></li>
+
+<li><p>Open this file in your editor and add the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">p</span>&gt;Hello, Docksal!&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div></li>
+
+<li><p>From your system&rsquo;s file explorer, open this file with your browser. If we wanted to, we could use an existing stack to setup our virtual hosts, our host file, and our web server. Depending on the existing setup, this could take a bit of time.</p></li>
+</ol>
+
+<p>Now that we&rsquo;re able to view the rendered HTML, but if we wanted to start adding in any server-side code, like PHP or NodeJS, we would need to setup the back end of our web stack. Instead we&rsquo;re going to add Docksal to this project. We do that by doing three things.</p>
+
+<ol>
+<li><p>Create a <code>docroot</code> folder inside your <code>~/projects/add-docksal/</code> folder and move <code>index.html</code> into it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir docroot
+$ mv index.html docroot/</code></pre></div></li>
+
+<li><p>Create a <code>.docksal</code> folder in your <code>~/projects/add-docksal/</code> folder.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir .docksal</code></pre></div></li>
+
+<li><p>Run <code>fin up</code> and watch as your project gets spun up.</p></li>
+</ol>
+
+<p>That&rsquo;s literally all you need to do to add Docksal to an existing project. If you look in your <code>~/project/add-docksal/.docksal/</code> folder now, you&rsquo;ll notice that Docksal has taken the liberty of adding your <code>docksal.env</code> and <code>docksal.yml</code> files. Inside the <code>docksal.env</code> it tells Docksal to use the default stack.</p>
+
+<p>After our project spins up, we can add the changes to the project to our repo and everyone working on this project now has access to the exact same development environment.</p>
+
+<p>If you remember, Docksal looks for your web application files in the <code>docroot</code> folder. This is why we created this folder and moved our <code>index.html</code> file into it before spinning up.</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>The process for adding Docksal to an existing project is simple and straightforward. If you have Docksal installed on your system, all that you need to do is add a <code>.docksal</code> folder to your project root and make sure that the files your server needs to render are inside the <code>docroot</code> folder. Once you have these done, all you have to do is run <code>fin up</code> and Docksal takes care of the rest.</p>
 
 
-
-
-<ul class="children children-li">
-	
-
-	
-		
-	
-
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-1/" >Project 1: Configuring to Match Production</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-2/" >Project 2: The Front-end Team Requires a Specific Version of NPM and NodeJS</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-3/" >Project 3: Building a Multi-server Project</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/summary/" >Summary</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-	
-</ul>
-
-
-
-
-
-
+<div class="notices tip" ><p>The finished code for this project is available at <a href="https://github.com/JDDoesDev/docksal-training-projects/tree/adding-docksal-project-1">https://github.com/JDDoesDev/docksal-training-projects/tree/adding-docksal-project-1</a>.</p>
+</div>
 
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div>
@@ -1984,7 +1990,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1998,8 +2003,21 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -2044,10 +2062,28 @@
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -2068,37 +2104,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
                         
-            
-            
-                
                     
                 
                 
@@ -2123,10 +2130,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/going-further/customizing/" title="Customizing a Project"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/going-further/existing-project/" title="Adding Docksal to an Existing Project"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/going-further/advanced-customizing/project-1/" title="Project 1: Configuring to Match Production" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/going-further/keep-it-local/" title="Using Local Files" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2156,3 +2163,4 @@
 
   </body>
 </html>
+

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Adding Docksal to an Existing Project on Docksal Documentation</title>
+    <link>https://jddoesdev.github.io/docksal-training/going-further/existing-project/</link>
+    <description>Recent content in Adding Docksal to an Existing Project on Docksal Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://jddoesdev.github.io/docksal-training/going-further/existing-project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Adding Docksal to a Basic Project</title>
+      <link>https://jddoesdev.github.io/docksal-training/going-further/existing-project/project-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jddoesdev.github.io/docksal-training/going-further/existing-project/project-1/</guid>
+      <description>Scenario As lead developer on a team you&amp;rsquo;ve run into a lot of issues with your teammates submitting features for code review and you notice that your continuous integration testing fails frequently. When you pull down to test for yourself, you see a lot of code that was deprecated in a previous version of PHP and will break if run on the version of PHP that your hosting provider uses.</description>
+    </item>
+    
+    <item>
+      <title>Adding Docksal to a Drupal Project</title>
+      <link>https://jddoesdev.github.io/docksal-training/going-further/existing-project/project-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jddoesdev.github.io/docksal-training/going-further/existing-project/project-2/</guid>
+      <description>Scenario You have several clients and projects that you do work for. You&amp;rsquo;ve been using a custom AMP (Apache, MySQL, PHP) stack, but you&amp;rsquo;re frustrated with having to change PHP versions for each client project. You&amp;rsquo;ve decided to use Docksal for a local development environment, but you don&amp;rsquo;t want to lose all of the work you&amp;rsquo;ve done.
+ Let&amp;rsquo;s take a moment to consider what we definitely need for our site to work on a Docksal project.</description>
+    </item>
+    
+  </channel>
+</rss>

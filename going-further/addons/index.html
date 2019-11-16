@@ -10,7 +10,7 @@
     
 <link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573934185" type="image/x-icon" />
 
-    <title>Before Installing :: Docksal Documentation</title>
+    <title>Addons :: Docksal Documentation</title>
 
     
     <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573934185" rel="stylesheet">
@@ -55,7 +55,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
-  <body class="" data-url="/getting-started/installing-docksal/prereqs/">
+  <body class="" data-url="/going-further/addons/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -788,7 +788,7 @@
   
     
     <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item 
-        parent
+        
         
         
         ">
@@ -817,8 +817,8 @@
   
     
     <li data-nav-id="/getting-started/installing-docksal/prereqs/" title="Before Installing" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="https://jddoesdev.github.io/docksal-training/getting-started/installing-docksal/prereqs/">
@@ -954,7 +954,7 @@
   
     
     <li data-nav-id="/going-further/" title="Going Further" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1221,8 +1221,8 @@
   
     
     <li data-nav-id="/going-further/addons/" title="Addons" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="https://jddoesdev.github.io/docksal-training/going-further/addons/">
@@ -1352,7 +1352,7 @@
             
           
           
-            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > <a href='https://jddoesdev.github.io/docksal-training/getting-started/'>Getting Started</a> > Before Installing
+            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > <a href='https://jddoesdev.github.io/docksal-training/going-further/'>Going Further</a> > Addons
           
          
           
@@ -1369,12 +1369,10 @@
 <ul>
 <li>
 <ul>
-<li><a href="#prereqs-and-system-requirements">Prereqs and System Requirements</a>
+<li><a href="#using-docksal-addons-to-make-development-easier">Using Docksal addons to make development easier</a>
 <ul>
-<li><a href="#all-systems">All systems</a></li>
-<li><a href="#mac">Mac</a></li>
-<li><a href="#linux">Linux</a></li>
-<li><a href="#windows">Windows</a></li>
+<li><a href="#list-of-current-addons">List of current addons</a></li>
+<li><a href="#summary">Summary</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1394,7 +1392,7 @@
           
             <h1>
               
-              Before Installing
+              Addons
             </h1>
           
 
@@ -1405,54 +1403,129 @@
 
 	
 
-<h2 id="prereqs-and-system-requirements">Prereqs and System Requirements</h2>
+<h2 id="using-docksal-addons-to-make-development-easier">Using Docksal addons to make development easier</h2>
 
-<p>The prerequisites for installing Docksal are pretty slim, but important.</p>
+<p>We touched on creating your own commands in <a href="https://jddoesdev.github.io/docksal-training/docksal-training/going-further/advanced-customizing/project-3/">Advanced Customizations: Project 3</a>, however many frequently used commands have been contributed to the Docksal project in the form of addons.</p>
 
-<ul>
-<li><h3 id="all-systems">All systems</h3>
+<h3 id="list-of-current-addons">List of current addons</h3>
 
-<ul>
-<li>8GB RAM or more</li>
-<li>Command Line access (Terminal, iTerm, or an IDE terminal)</li>
-</ul></li>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Requirements</th>
+</tr>
+</thead>
 
-<li><h3 id="mac">Mac</h3>
+<tbody>
+<tr>
+<td>adminer</td>
+<td><a href="https://www.adminer.org/">Adminer</a> database management tool</td>
+<td>MySQL</td>
+</tr>
 
-<ul>
-<li>2010 or newer model</li>
-<li>Docker for Mac or VirtualBox (<strong>NOTE:</strong> This training is currently based on using VirtualBox)</li>
-</ul></li>
+<tr>
+<td>andock</td>
+<td><a href="https://andock.readthedocs.io/en/latest/">Andock</a> makes it dead simple to get Docksal environments up on your server.</td>
+<td>Docksal</td>
+</tr>
 
-<li><h3 id="linux">Linux</h3>
+<tr>
+<td>artisan</td>
+<td>Runs <a href="https://laravel.com/docs/artisan">Laravel&rsquo;s Artisan</a> command in <code>cli</code>. <strong>Requires</strong> artisan pre-installed inside <code>cli</code>.</td>
+<td>Laravel, Artisan</td>
+</tr>
 
-<ul>
-<li><p>By default, Apache listens on <code>0.0.0.0:80</code> and <code>0.0.0.0:443</code>. This will prevent Docksal reverse proxy from running properly. You can resolve it an any of the following ways:</p>
+<tr>
+<td>blt</td>
+<td>Acquia BLT tool launcher (requires <a href="https://blog.docksal.io/docksal-and-acquia-blt-1552540a3b9f">BLT installation</a>)</td>
+<td>Drupal</td>
+</tr>
 
-<ul>
-<li>Reconfigure Apache to listen on different host (e.g., 1<code>27.0.0.1:80</code> and <code>127.0.0.1:443</code>)</li>
-<li>Reconfigure Apache to listen on different ports (e.g., <code>8080</code> and <code>4433</code>)</li>
-<li>Stop and disable Apache</li>
-</ul></li>
+<tr>
+<td>codeclimate</td>
+<td><a href="https://codeclimate.com/">CodeClimate</a> code quality tool</td>
+<td></td>
+</tr>
 
-<li><p>Check that you have installed and configured:</p>
+<tr>
+<td>mailhog</td>
+<td><a href="https://github.com/mailhog/MailHog">Mailhog</a> e-mail capture service for current project</td>
+<td></td>
+</tr>
 
-<ul>
-<li><code>curl</code></li>
-<li><code>sudo</code></li>
-<li>CPU with SSE4.2 instruction set supported</li>
-<li>Docker</li>
-</ul></li>
-</ul></li>
+<tr>
+<td>phpcs</td>
+<td>PHP Code Sniffer and Code Beautifier</td>
+<td></td>
+</tr>
 
-<li><h3 id="windows">Windows</h3>
+<tr>
+<td>phpunit</td>
+<td>Creates a phpunit.xml file and runs PHPUnit tests</td>
+<td>Drupal</td>
+</tr>
 
-<ul>
-<li>Windows 10 with Windows Subsystem for Linux and CPU with hardware virtualization (VT-x/AMD-V) supported and enabled in BIOS.</li>
-<li>Ubuntu 18.04 or greater</li>
-<li>Docker for Windows or VirtualBox (<strong>NOTE:</strong> This training is currently based on using VirtualBox)</li>
-</ul></li>
-</ul>
+<tr>
+<td>pma</td>
+<td><a href="https://www.phpmyadmin.net/">PhpMyAdmin</a> database management tool</td>
+<td>MySQL</td>
+</tr>
+
+<tr>
+<td>redis</td>
+<td>Add <a href="https://redis.io/">Redis</a> to current project</td>
+<td></td>
+</tr>
+
+<tr>
+<td>sequelpro</td>
+<td>Launches <a href="https://www.sequelpro.com">SequelPro</a> with the connection information for current project.</td>
+<td>macOS</td>
+</tr>
+
+<tr>
+<td>simpletest</td>
+<td>Runs SimpleTest tests in Drupal 7 and 8</td>
+<td>Drupal</td>
+</tr>
+
+<tr>
+<td>solr</td>
+<td><a href="http://lucene.apache.org/solr/">Apache Solr</a> search service for current project</td>
+<td></td>
+</tr>
+
+<tr>
+<td>uli</td>
+<td>Generate one time login url for current site</td>
+<td>Drupal</td>
+</tr>
+</tbody>
+</table>
+
+<p>All of these are available to install and use to make development a little quicker and easier. Let&rsquo;s install an addon.</p>
+
+<p>We&rsquo;re going to install <code>uli</code> which is a wrapper for the Drupal Drush command <code>drush uli</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ fin addon install uli</code></pre></div>
+<p>This will download the file to your <code>.docksal/addons</code> folder and make it available to your project.</p>
+
+<p>To run any addon, you just need to run <code>fin [addon name]</code>. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ fin uli</code></pre></div>
+<p>Additionally, since Docksal is an open source project, you can create your own addons and submit them back to the project. Say you have a command that speeds up your process and you think others may benefit from it. To contribute back, you would do the following:</p>
+
+<ol>
+<li>Fork the addons repo from <a href="https://github.com/docksal/addons">https://github.com/docksal/addons</a></li>
+<li>Create a feature branch</li>
+<li>Add your addon into your fork of the repo</li>
+<li>Update the repo&rsquo;s <code>README.md</code> file with your addon a description and any requirements</li>
+<li>Submit a pull request against the Docksal addons repo with a description of what your addon does and how it&rsquo;s beneficial</li>
+</ol>
+
+<h3 id="summary">Summary</h3>
+
+<p>Addons are generally community contributed commands that have been submitted to the Docksal project for the greater good of all users. You can use existing addons or submit your own back to the project. The process for installing an addon is simple and after an addon is in your project, you are free to tweak it to your own needs.</p>
 
 
 
@@ -1892,109 +1965,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -2020,19 +1990,6 @@
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -2106,6 +2063,121 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -2170,6 +2242,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -2185,6 +2258,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2209,10 +2285,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/getting-started/" title="Getting Started"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/going-further/existing-project/project-2/" title="Adding Docksal to a Drupal Project"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/getting-started/installing-docksal/installation/" title="Installation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/going-further/not-just-for-local/" title="Other Docksal uses" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

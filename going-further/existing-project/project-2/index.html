@@ -10,7 +10,7 @@
     
 <link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573934185" type="image/x-icon" />
 
-    <title>Before Installing :: Docksal Documentation</title>
+    <title>Adding Docksal to a Drupal Project :: Docksal Documentation</title>
 
     
     <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573934185" rel="stylesheet">
@@ -55,7 +55,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
-  <body class="" data-url="/getting-started/installing-docksal/prereqs/">
+  <body class="" data-url="/going-further/existing-project/project-2/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -788,7 +788,7 @@
   
     
     <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item 
-        parent
+        
         
         
         ">
@@ -817,8 +817,8 @@
   
     
     <li data-nav-id="/getting-started/installing-docksal/prereqs/" title="Before Installing" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="https://jddoesdev.github.io/docksal-training/getting-started/installing-docksal/prereqs/">
@@ -954,7 +954,7 @@
   
     
     <li data-nav-id="/going-further/" title="Going Further" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1147,7 +1147,7 @@
   
     
     <li data-nav-id="/going-further/existing-project/" title="Adding Docksal to an Existing Project" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1192,7 +1192,7 @@
  
   
     
-      <li data-nav-id="/going-further/existing-project/project-2/" title="Adding Docksal to a Drupal Project" class="dd-item ">
+      <li data-nav-id="/going-further/existing-project/project-2/" title="Adding Docksal to a Drupal Project" class="dd-item active">
         <a href="https://jddoesdev.github.io/docksal-training/going-further/existing-project/project-2/">
         Adding Docksal to a Drupal Project
         <i class="fas fa-check read-icon"></i>
@@ -1352,7 +1352,13 @@
             
           
           
-            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > <a href='https://jddoesdev.github.io/docksal-training/getting-started/'>Getting Started</a> > Before Installing
+            
+            
+          
+          
+            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > <a href='https://jddoesdev.github.io/docksal-training/going-further/'>Going Further</a> > <a href='https://jddoesdev.github.io/docksal-training/going-further/existing-project/'>Adding Docksal to an Existing Project</a> > Adding Docksal to a Drupal Project
+          
+         
           
          
           
@@ -1369,12 +1375,13 @@
 <ul>
 <li>
 <ul>
-<li><a href="#prereqs-and-system-requirements">Prereqs and System Requirements</a>
+<li><a href="#scenario">Scenario</a>
 <ul>
-<li><a href="#all-systems">All systems</a></li>
-<li><a href="#mac">Mac</a></li>
-<li><a href="#linux">Linux</a></li>
-<li><a href="#windows">Windows</a></li>
+<li><a href="#summary">Summary</a></li>
+</ul></li>
+<li><a href="#troubleshooting">Troubleshooting</a>
+<ul>
+<li><a href="#conflicting-ports">Conflicting Ports</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1394,7 +1401,7 @@
           
             <h1>
               
-              Before Installing
+              Adding Docksal to a Drupal Project
             </h1>
           
 
@@ -1403,64 +1410,149 @@
 
 
 
-	
 
-<h2 id="prereqs-and-system-requirements">Prereqs and System Requirements</h2>
+<h2 id="scenario">Scenario</h2>
 
-<p>The prerequisites for installing Docksal are pretty slim, but important.</p>
 
-<ul>
-<li><h3 id="all-systems">All systems</h3>
+<div class="notices info" ><p>You have several clients and projects that you do work for. You&rsquo;ve been using a custom AMP (Apache, MySQL, PHP) stack, but you&rsquo;re frustrated with having to change PHP versions for each client project. You&rsquo;ve decided to use Docksal for a local development environment, but you don&rsquo;t want to lose all of the work you&rsquo;ve done.</p>
+</div>
 
-<ul>
-<li>8GB RAM or more</li>
-<li>Command Line access (Terminal, iTerm, or an IDE terminal)</li>
-</ul></li>
 
-<li><h3 id="mac">Mac</h3>
+<p>Let&rsquo;s take a moment to consider what we definitely need for our site to work on a Docksal project.</p>
 
 <ul>
-<li>2010 or newer model</li>
-<li>Docker for Mac or VirtualBox (<strong>NOTE:</strong> This training is currently based on using VirtualBox)</li>
-</ul></li>
-
-<li><h3 id="linux">Linux</h3>
-
-<ul>
-<li><p>By default, Apache listens on <code>0.0.0.0:80</code> and <code>0.0.0.0:443</code>. This will prevent Docksal reverse proxy from running properly. You can resolve it an any of the following ways:</p>
-
-<ul>
-<li>Reconfigure Apache to listen on different host (e.g., 1<code>27.0.0.1:80</code> and <code>127.0.0.1:443</code>)</li>
-<li>Reconfigure Apache to listen on different ports (e.g., <code>8080</code> and <code>4433</code>)</li>
-<li>Stop and disable Apache</li>
-</ul></li>
-
-<li><p>Check that you have installed and configured:</p>
-
-<ul>
-<li><code>curl</code></li>
-<li><code>sudo</code></li>
-<li>CPU with SSE4.2 instruction set supported</li>
-<li>Docker</li>
-</ul></li>
-</ul></li>
-
-<li><h3 id="windows">Windows</h3>
-
-<ul>
-<li>Windows 10 with Windows Subsystem for Linux and CPU with hardware virtualization (VT-x/AMD-V) supported and enabled in BIOS.</li>
-<li>Ubuntu 18.04 or greater</li>
-<li>Docker for Windows or VirtualBox (<strong>NOTE:</strong> This training is currently based on using VirtualBox)</li>
-</ul></li>
+<li>Apache, MySQL, PHP</li>
+<li>A database connection</li>
+<li>Drush</li>
+<li>Composer</li>
+<li>A database backup</li>
 </ul>
 
 
+<div class="notices tip" ><p>The starting code for this project is available at <a href="https://github.com/JDDoesDev/docksal-training-projects/tree/adding-docksal-project-2-start">https://github.com/JDDoesDev/docksal-training-projects/tree/adding-docksal-project-2-start</a></p>
+</div>
 
+
+<ol>
+<li><p>The first thing we need is a backup of our database. How we do this depends on how your project is setup.</p>
+
+<p><strong>Option 1: Sync from production</strong></p>
+
+<p>If your project is already hosted and you have Drush aliases setup to your production site, you&rsquo;ll be able to import the database by using a command like <code>drush sql-sync @remote @local</code> depending on your Drush aliases.</p>
+
+<p><strong>Option 2: Create a local dump</strong></p>
+
+<p>If your project is only local and you don&rsquo;t have a remote to sync from, you can create a database dump by using <code>drush sql:dump</code> before shutting down your existing project and importing after we get setup.</p></li>
+
+<li><p>Next, we need to add Docksal to our project. Assuming that we&rsquo;re working in our <code>~/projects/docksal-training-projects</code> folder on the branch <code>adding-docksal-project-2-start</code> we&rsquo;ll need to create the <code>.docksal</code> folder.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir .docksal</code></pre></div>
+<p>Now we have Docksal as part of our project, but we&rsquo;re missing a few things. For one, we don&rsquo;t have anything telling Drupal where to find the database. This usually lives in <code>docroot/sites/default/settings.php</code>.</p></li>
+</ol>
+
+
+<div class="notices info" ><p>It is normally considered bad practice and insecure to include your live <code>settings.php</code> file in the repo, however this demo does not contain any sensitive data or real passwords.</p>
+</div>
+
+
+<ol>
+<li><p>We don&rsquo;t want to override our production settings with our Docksal settings, so we&rsquo;re going to create a <code>docksal.settings.php</code> file that we will conditionally require in our <code>settings.php</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd docroot/sites/default/
+$ touch docksal.settings.php</code></pre></div>
+<p>Open this file in your text editor.</p></li>
+
+<li><p>Add Docksal required settings to your <code>docksal.settings.php</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span> <span style="color:#75715e">// Don&#39;t forget the opening php tag
+</span><span style="color:#75715e"># Docksal DB connection settings.
+</span><span style="color:#75715e"></span>$databases[<span style="color:#e6db74">&#39;default&#39;</span>][<span style="color:#e6db74">&#39;default&#39;</span>] <span style="color:#f92672">=</span> [
+  <span style="color:#e6db74">&#39;database&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;default&#39;</span>,
+  <span style="color:#e6db74">&#39;username&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;user&#39;</span>,
+  <span style="color:#e6db74">&#39;password&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;user&#39;</span>,
+  <span style="color:#e6db74">&#39;host&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;db&#39;</span>,
+  <span style="color:#e6db74">&#39;driver&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;mysql&#39;</span>,
+];
+</code></pre></div>
+<p>The following is for Drupal 8 only. If you are using Drupal 7 then replace <code>$settings</code> with <code>$conf</code> in the following lines.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"># Workaround for permission issues with NFS shares in Vagrant
+$settings[&#39;file_chmod_directory&#39;] = 0777;
+$settings[&#39;file_chmod_file&#39;] = 0666;</code></pre></div></li>
+
+<li><p>Reset your permissions on your <code>docroot/sites/default/files</code> folder to make sure your files are accessible to your containerized project.</p>
+
+<p>From your <code>docroot/sites/default</code> folder run the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ chmod -R +rwX files</code></pre></div>
+<p>This command uses <code>chmod</code> to change the mode of the files and folders. <code>-R</code> is for recursive. The additional flags are <code>r</code> for &lsquo;read&rsquo;, <code>w</code> for &lsquo;write&rsquo;, and <code>X</code> indicates to make folders or directories executable/searchable (notice the capital <code>X</code> instead of <code>x</code>). This sets the folders to <code>777</code> or <code>rwx</code> and files to <code>666</code> or <code>rw</code>.</p></li>
+
+<li><p>Tell Drupal where to find our <code>docksal.settings.php</code> file.</p>
+
+<p>To do this we have a couple of options. We can either uncomment the section at the bottom of the default <code>settings.php</code> file</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">if (file_exists($app_root . &#39;/&#39; . $site_path . &#39;/settings.local.php&#39;)) {
+  include $app_root . &#39;/&#39; . $site_path . &#39;/settings.local.php&#39;;
+}</code></pre></div>
+<p>and replace <code>settings.local.php</code> with <code>docksal.settings.php</code>, but this will cause some issues if we forget to ignore our <code>docksal.settings.php</code> file in version control.</p>
+
+<p>My preferred method is to use the following snippet:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">// Signals that this is operating in a Docksal environment and should include
+// default Docksal settings.
+if (getenv(&#39;PROJECT_ROOT&#39;) <span style="color:#960050;background-color:#1e0010">&amp;&amp;</span> file_exists($app_root . &#39;/&#39; . $site_path . &#39;/docksal.settings.php&#39;)) {
+  require $app_root . &#39;/&#39; . $site_path . &#39;/docksal.settings.php&#39;;
+}</code></pre></div>
+<p>The reason I prefer this snippet is because instead of just checking if the file <code>docksal.settings.php</code> exists, it also checks to see if the <code>PROJECT_ROOT</code> environmental variable exists, which it always will in a Docksal project, and then includes <code>docksal.settings.php</code>.</p></li>
+
+<li><p>Start Docksal with <code>fin project start</code></p>
+
+<p><strong>Troubleshooting Tip</strong></p>
+
+<p>If you&rsquo;ve been working in this folder on other projects from this training, you may run into an issue where the volumes are confused. If you try to run a command and get an error saying that the file cannot be found or similar, then you may need to do the following steps to clear any existing volumes and containers:</p>
+
+<ol>
+<li>Run <code>fin project remove</code></li>
+<li>Run <code>fin system restart</code></li>
+<li>Run <code>fin project start</code></li>
+</ol></li>
+
+<li><p>If you cloned this project from version control, install the composer dependencies.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ fin composer install</code></pre></div></li>
+
+<li><p>Create the default database for our project.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ fin db create default</code></pre></div></li>
+
+<li><p>Visit your site at <code>docksal-training-projects.docksal</code></p></li>
+</ol>
+
+<p>If all went well, you should see the default install page. At this point we would import our database from our dump using <code>fin db import [file]</code> or from our production server using <code>fin drush</code>.</p>
+
+
+<div class="notices tip" ><p>The finished code for this project is available at <a href="https://github.com/JDDoesDev/docksal-training-projects/tree/adding-docksal-project-2-finish">https://github.com/JDDoesDev/docksal-training-projects/tree/adding-docksal-project-2-finish</a></p>
+</div>
+
+
+<h3 id="summary">Summary</h3>
+
+<p>By using the default stack that Docksal imports to an empty <code>.docksal</code> folder, we have our Apache, MySQL, and PHP installed in our project. We told Drupal where to find our database, and composer and Drush are installed in our project by Docksal by default.</p>
+
+<p>Adding Docksal to an existing Drupal project takes a few extra steps, but is pretty straightforward. With some practice you&rsquo;ll know what steps to take without having to refer to this training. You could even automate the process by creating your own <code>fin init</code> script to build the site, import the database from production, import config, and create the correct settings files. Next up we&rsquo;re going to explore some of the many addons that are available through Docksal.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>Some common issues when moving from a locally hosted project using WAMP, MAMP, or other containerized environments:</p>
+
+<h3 id="conflicting-ports">Conflicting Ports</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Resetting Docksal services...
+ * proxy
+docker: Error response from daemon: driver failed programming external connectivity
+on endpoint docksal-vhost-proxy <span style="color:#f92672">(</span>a7addf7797e6b0aec8e3e810c11775eb77508c9079e375c083b3650df2dff9a2<span style="color:#f92672">)</span>:
+Error starting userland proxy: listen tcp <span style="color:#ae81ff">0</span>.0.0.0:443: listen: address already in use.</code></pre></div>
+<p>If Apache is running, it listens on the same ports (80, 443) as Docksal. Solve this by stopping Apache or reconfiguring Apache ports.</p>
+
+<p>If Apache is not running, there may be some conflicts between Docksal and another local dev system. Run run <code>lsof -PiTCP -sTCP:LISTEN</code> and see what is using port 80 or port 443 and stop that process.</p>
+
+<p>For other troubleshooting tips, visit the <a href="https://docs.docksal.io/troubleshooting/">Troubleshooting section of the Docksal docs</a>.</p>
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div>
@@ -1892,109 +1984,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -2020,19 +2009,6 @@
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -2106,6 +2082,25 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -2162,6 +2157,19 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -2169,6 +2177,97 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -2209,10 +2308,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/getting-started/" title="Getting Started"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/going-further/existing-project/project-1/" title="Adding Docksal to a Basic Project"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/getting-started/installing-docksal/installation/" title="Installation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/going-further/addons/" title="Addons" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2242,3 +2341,4 @@
 
   </body>
 </html>
+

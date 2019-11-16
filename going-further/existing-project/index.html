@@ -10,7 +10,7 @@
     
 <link rel="shortcut icon" href="https://jddoesdev.github.io/docksal-training/images/favicon.png?1573934185" type="image/x-icon" />
 
-    <title>Before Installing :: Docksal Documentation</title>
+    <title>Adding Docksal to an Existing Project :: Docksal Documentation</title>
 
     
     <link href="https://jddoesdev.github.io/docksal-training/css/nucleus.css?1573934185" rel="stylesheet">
@@ -55,7 +55,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
-  <body class="" data-url="/getting-started/installing-docksal/prereqs/">
+  <body class="" data-url="/going-further/existing-project/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -788,7 +788,7 @@
   
     
     <li data-nav-id="/getting-started/" title="Getting Started" class="dd-item 
-        parent
+        
         
         
         ">
@@ -817,8 +817,8 @@
   
     
     <li data-nav-id="/getting-started/installing-docksal/prereqs/" title="Before Installing" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="https://jddoesdev.github.io/docksal-training/getting-started/installing-docksal/prereqs/">
@@ -954,7 +954,7 @@
   
     
     <li data-nav-id="/going-further/" title="Going Further" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1147,8 +1147,8 @@
   
     
     <li data-nav-id="/going-further/existing-project/" title="Adding Docksal to an Existing Project" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="https://jddoesdev.github.io/docksal-training/going-further/existing-project/">
@@ -1352,7 +1352,7 @@
             
           
           
-            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > <a href='https://jddoesdev.github.io/docksal-training/getting-started/'>Getting Started</a> > Before Installing
+            <a href='https://jddoesdev.github.io/docksal-training/'>Modern Local Development With Docksal</a> > <a href='https://jddoesdev.github.io/docksal-training/going-further/'>Going Further</a> > Adding Docksal to an Existing Project
           
          
           
@@ -1369,13 +1369,7 @@
 <ul>
 <li>
 <ul>
-<li><a href="#prereqs-and-system-requirements">Prereqs and System Requirements</a>
-<ul>
-<li><a href="#all-systems">All systems</a></li>
-<li><a href="#mac">Mac</a></li>
-<li><a href="#linux">Linux</a></li>
-<li><a href="#windows">Windows</a></li>
-</ul></li>
+<li><a href="#it-s-okay-if-you-didn-t-start-a-project-with-docksal">It&rsquo;s Okay if You Didn&rsquo;t Start a Project with Docksal</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -1394,7 +1388,7 @@
           
             <h1>
               
-              Before Installing
+              Adding Docksal to an Existing Project
             </h1>
           
 
@@ -1405,54 +1399,64 @@
 
 	
 
-<h2 id="prereqs-and-system-requirements">Prereqs and System Requirements</h2>
+<h2 id="it-s-okay-if-you-didn-t-start-a-project-with-docksal">It&rsquo;s Okay if You Didn&rsquo;t Start a Project with Docksal</h2>
 
-<p>The prerequisites for installing Docksal are pretty slim, but important.</p>
+<p>Adding Docksal to your existing projects is a relatively straightforward process. Just because you didn&rsquo;t begin developing with Docksal doesn&rsquo;t mean that you can&rsquo;t use it going forward.</p>
 
-<ul>
-<li><h3 id="all-systems">All systems</h3>
+<p>In this section we&rsquo;re going to explore a few ways to add Docksal to your existing web projects.</p>
 
-<ul>
-<li>8GB RAM or more</li>
-<li>Command Line access (Terminal, iTerm, or an IDE terminal)</li>
-</ul></li>
 
-<li><h3 id="mac">Mac</h3>
 
-<ul>
-<li>2010 or newer model</li>
-<li>Docker for Mac or VirtualBox (<strong>NOTE:</strong> This training is currently based on using VirtualBox)</li>
-</ul></li>
 
-<li><h3 id="linux">Linux</h3>
 
-<ul>
-<li><p>By default, Apache listens on <code>0.0.0.0:80</code> and <code>0.0.0.0:443</code>. This will prevent Docksal reverse proxy from running properly. You can resolve it an any of the following ways:</p>
 
-<ul>
-<li>Reconfigure Apache to listen on different host (e.g., 1<code>27.0.0.1:80</code> and <code>127.0.0.1:443</code>)</li>
-<li>Reconfigure Apache to listen on different ports (e.g., <code>8080</code> and <code>4433</code>)</li>
-<li>Stop and disable Apache</li>
-</ul></li>
 
-<li><p>Check that you have installed and configured:</p>
 
-<ul>
-<li><code>curl</code></li>
-<li><code>sudo</code></li>
-<li>CPU with SSE4.2 instruction set supported</li>
-<li>Docker</li>
-</ul></li>
-</ul></li>
+<ul class="children children-li">
+	
 
-<li><h3 id="windows">Windows</h3>
+	
+		
+	
 
-<ul>
-<li>Windows 10 with Windows Subsystem for Linux and CPU with hardware virtualization (VT-x/AMD-V) supported and enabled in BIOS.</li>
-<li>Ubuntu 18.04 or greater</li>
-<li>Docker for Windows or VirtualBox (<strong>NOTE:</strong> This training is currently based on using VirtualBox)</li>
-</ul></li>
+	
+
+	
+		
+	
+		
+			
+				
+<li>
+<a href="https://jddoesdev.github.io/docksal-training/going-further/existing-project/project-1/" >Adding Docksal to a Basic Project</a>
+</li>
+				
+
+				
+			
+			
+		
+	
+		
+			
+				
+<li>
+<a href="https://jddoesdev.github.io/docksal-training/going-further/existing-project/project-2/" >Adding Docksal to a Drupal Project</a>
+</li>
+				
+
+				
+			
+			
+		
+	
+
+	
 </ul>
+
+
+
+
 
 
 
@@ -1892,109 +1896,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -2020,19 +1921,6 @@
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -2106,6 +1994,25 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
                 
                 
 
@@ -2134,6 +2041,106 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -2209,10 +2216,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/getting-started/" title="Getting Started"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jddoesdev.github.io/docksal-training/going-further/keep-it-local/" title="Using Local Files"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/getting-started/installing-docksal/installation/" title="Installation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jddoesdev.github.io/docksal-training/going-further/existing-project/project-1/" title="Adding Docksal to a Basic Project" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

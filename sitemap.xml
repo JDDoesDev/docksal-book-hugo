@@ -75,10 +75,6 @@
   </url>
   
   <url>
-    <loc>https://jddoesdev.github.io/docksal-training/going-further/existing-project/</loc>
-  </url>
-  
-  <url>
     <loc>https://jddoesdev.github.io/docksal-training/intro-docker/beyond-docker/</loc>
   </url>
   
@@ -104,6 +100,10 @@
   
   <url>
     <loc>https://jddoesdev.github.io/docksal-training/going-further/existing-project/project-1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jddoesdev.github.io/docksal-training/going-further/existing-project/</loc>
   </url>
   
   <url>
